@@ -13,7 +13,10 @@ namespace DesignPatterns
         private SinglePattern()
         {
         }
-
+        /// <summary>
+        /// 双重检查加锁
+        /// </summary>
+        /// <returns></returns>
         public SinglePattern GetInstance()
         {
             
