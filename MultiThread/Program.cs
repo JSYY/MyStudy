@@ -91,13 +91,21 @@ namespace MultiThread
             Program p1 = new Program();
             Program p2 = new Program();
             Program p3 = new Program();
-            Task.Factory.StartNew(()=>p1.method("1"));
-            Task.Factory.StartNew(() => p2.method("2"));
-            Task.Factory.StartNew(() => p3.method("3"));
+            Task.Factory.StartNew(()=>p1.methodA("1"));
+            Task.Factory.StartNew(() => p2.methodA("2"));
+            Task.Factory.StartNew(() => p3.methodA("3"));
+            Task.Factory.StartNew(() => p3.methodB("4"));
             Console.ReadKey();
         }
 
-        public void method(string item)
+        public void methodA(string item)
+        {
+            lock (obj)
+            {
+                Console.WriteLine(item);
+            }
+        }
+        public void methodB(string item)
         {
             lock (obj)
             {
