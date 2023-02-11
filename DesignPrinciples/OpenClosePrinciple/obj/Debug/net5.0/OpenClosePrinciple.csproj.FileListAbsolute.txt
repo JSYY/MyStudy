@@ -1,0 +1,16 @@
+D:\Code\GitRepository\my-git-repository\Code\DesignPrinciples\OpenClosePrinciple\bin\Debug\net5.0\OpenClosePrinciple.exe
+D:\Code\GitRepository\my-git-repository\Code\DesignPrinciples\OpenClosePrinciple\bin\Debug\net5.0\OpenClosePrinciple.deps.json
+D:\Code\GitRepository\my-git-repository\Code\DesignPrinciples\OpenClosePrinciple\bin\Debug\net5.0\OpenClosePrinciple.runtimeconfig.json
+D:\Code\GitRepository\my-git-repository\Code\DesignPrinciples\OpenClosePrinciple\bin\Debug\net5.0\OpenClosePrinciple.runtimeconfig.dev.json
+D:\Code\GitRepository\my-git-repository\Code\DesignPrinciples\OpenClosePrinciple\bin\Debug\net5.0\OpenClosePrinciple.dll
+D:\Code\GitRepository\my-git-repository\Code\DesignPrinciples\OpenClosePrinciple\bin\Debug\net5.0\ref\OpenClosePrinciple.dll
+D:\Code\GitRepository\my-git-repository\Code\DesignPrinciples\OpenClosePrinciple\bin\Debug\net5.0\OpenClosePrinciple.pdb
+D:\Code\GitRepository\my-git-repository\Code\DesignPrinciples\OpenClosePrinciple\obj\Debug\net5.0\OpenClosePrinciple.csproj.AssemblyReference.cache
+D:\Code\GitRepository\my-git-repository\Code\DesignPrinciples\OpenClosePrinciple\obj\Debug\net5.0\OpenClosePrinciple.GeneratedMSBuildEditorConfig.editorconfig
+D:\Code\GitRepository\my-git-repository\Code\DesignPrinciples\OpenClosePrinciple\obj\Debug\net5.0\OpenClosePrinciple.AssemblyInfoInputs.cache
+D:\Code\GitRepository\my-git-repository\Code\DesignPrinciples\OpenClosePrinciple\obj\Debug\net5.0\OpenClosePrinciple.AssemblyInfo.cs
+D:\Code\GitRepository\my-git-repository\Code\DesignPrinciples\OpenClosePrinciple\obj\Debug\net5.0\OpenClosePrinciple.csproj.CoreCompileInputs.cache
+D:\Code\GitRepository\my-git-repository\Code\DesignPrinciples\OpenClosePrinciple\obj\Debug\net5.0\OpenClosePrinciple.dll
+D:\Code\GitRepository\my-git-repository\Code\DesignPrinciples\OpenClosePrinciple\obj\Debug\net5.0\ref\OpenClosePrinciple.dll
+D:\Code\GitRepository\my-git-repository\Code\DesignPrinciples\OpenClosePrinciple\obj\Debug\net5.0\OpenClosePrinciple.pdb
+D:\Code\GitRepository\my-git-repository\Code\DesignPrinciples\OpenClosePrinciple\obj\Debug\net5.0\OpenClosePrinciple.genruntimeconfig.cache

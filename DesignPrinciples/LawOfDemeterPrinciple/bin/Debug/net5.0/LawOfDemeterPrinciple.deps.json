@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v5.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v5.0": {
+      "LawOfDemeterPrinciple/1.0.0": {
+        "runtime": {
+          "LawOfDemeterPrinciple.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "LawOfDemeterPrinciple/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
