@@ -1,0 +1,16 @@
+D:\Code\GitRepository\MyStudy\DesignPrinciples\SingleResponsibilityPrinciple\bin\Debug\net5.0\SingleResponsibilityPrinciple.exe
+D:\Code\GitRepository\MyStudy\DesignPrinciples\SingleResponsibilityPrinciple\bin\Debug\net5.0\SingleResponsibilityPrinciple.deps.json
+D:\Code\GitRepository\MyStudy\DesignPrinciples\SingleResponsibilityPrinciple\bin\Debug\net5.0\SingleResponsibilityPrinciple.runtimeconfig.json
+D:\Code\GitRepository\MyStudy\DesignPrinciples\SingleResponsibilityPrinciple\bin\Debug\net5.0\SingleResponsibilityPrinciple.runtimeconfig.dev.json
+D:\Code\GitRepository\MyStudy\DesignPrinciples\SingleResponsibilityPrinciple\bin\Debug\net5.0\SingleResponsibilityPrinciple.dll
+D:\Code\GitRepository\MyStudy\DesignPrinciples\SingleResponsibilityPrinciple\bin\Debug\net5.0\ref\SingleResponsibilityPrinciple.dll
+D:\Code\GitRepository\MyStudy\DesignPrinciples\SingleResponsibilityPrinciple\bin\Debug\net5.0\SingleResponsibilityPrinciple.pdb
+D:\Code\GitRepository\MyStudy\DesignPrinciples\SingleResponsibilityPrinciple\obj\Debug\net5.0\SingleResponsibilityPrinciple.csproj.AssemblyReference.cache
+D:\Code\GitRepository\MyStudy\DesignPrinciples\SingleResponsibilityPrinciple\obj\Debug\net5.0\SingleResponsibilityPrinciple.GeneratedMSBuildEditorConfig.editorconfig
+D:\Code\GitRepository\MyStudy\DesignPrinciples\SingleResponsibilityPrinciple\obj\Debug\net5.0\SingleResponsibilityPrinciple.AssemblyInfoInputs.cache
+D:\Code\GitRepository\MyStudy\DesignPrinciples\SingleResponsibilityPrinciple\obj\Debug\net5.0\SingleResponsibilityPrinciple.AssemblyInfo.cs
+D:\Code\GitRepository\MyStudy\DesignPrinciples\SingleResponsibilityPrinciple\obj\Debug\net5.0\SingleResponsibilityPrinciple.csproj.CoreCompileInputs.cache
+D:\Code\GitRepository\MyStudy\DesignPrinciples\SingleResponsibilityPrinciple\obj\Debug\net5.0\SingleResponsibilityPrinciple.dll
+D:\Code\GitRepository\MyStudy\DesignPrinciples\SingleResponsibilityPrinciple\obj\Debug\net5.0\ref\SingleResponsibilityPrinciple.dll
+D:\Code\GitRepository\MyStudy\DesignPrinciples\SingleResponsibilityPrinciple\obj\Debug\net5.0\SingleResponsibilityPrinciple.pdb
+D:\Code\GitRepository\MyStudy\DesignPrinciples\SingleResponsibilityPrinciple\obj\Debug\net5.0\SingleResponsibilityPrinciple.genruntimeconfig.cache

@@ -1,0 +1,16 @@
+D:\Code\GitRepository\MyStudy\DesignPrinciples\LiskovSubstitutionPrinciple\bin\Debug\net5.0\LiskovSubstitutionPrinciple.exe
+D:\Code\GitRepository\MyStudy\DesignPrinciples\LiskovSubstitutionPrinciple\bin\Debug\net5.0\LiskovSubstitutionPrinciple.deps.json
+D:\Code\GitRepository\MyStudy\DesignPrinciples\LiskovSubstitutionPrinciple\bin\Debug\net5.0\LiskovSubstitutionPrinciple.runtimeconfig.json
+D:\Code\GitRepository\MyStudy\DesignPrinciples\LiskovSubstitutionPrinciple\bin\Debug\net5.0\LiskovSubstitutionPrinciple.runtimeconfig.dev.json
+D:\Code\GitRepository\MyStudy\DesignPrinciples\LiskovSubstitutionPrinciple\bin\Debug\net5.0\LiskovSubstitutionPrinciple.dll
+D:\Code\GitRepository\MyStudy\DesignPrinciples\LiskovSubstitutionPrinciple\bin\Debug\net5.0\ref\LiskovSubstitutionPrinciple.dll
+D:\Code\GitRepository\MyStudy\DesignPrinciples\LiskovSubstitutionPrinciple\bin\Debug\net5.0\LiskovSubstitutionPrinciple.pdb
+D:\Code\GitRepository\MyStudy\DesignPrinciples\LiskovSubstitutionPrinciple\obj\Debug\net5.0\LiskovSubstitutionPrinciple.csproj.AssemblyReference.cache
+D:\Code\GitRepository\MyStudy\DesignPrinciples\LiskovSubstitutionPrinciple\obj\Debug\net5.0\LiskovSubstitutionPrinciple.GeneratedMSBuildEditorConfig.editorconfig
+D:\Code\GitRepository\MyStudy\DesignPrinciples\LiskovSubstitutionPrinciple\obj\Debug\net5.0\LiskovSubstitutionPrinciple.AssemblyInfoInputs.cache
+D:\Code\GitRepository\MyStudy\DesignPrinciples\LiskovSubstitutionPrinciple\obj\Debug\net5.0\LiskovSubstitutionPrinciple.AssemblyInfo.cs
+D:\Code\GitRepository\MyStudy\DesignPrinciples\LiskovSubstitutionPrinciple\obj\Debug\net5.0\LiskovSubstitutionPrinciple.csproj.CoreCompileInputs.cache
+D:\Code\GitRepository\MyStudy\DesignPrinciples\LiskovSubstitutionPrinciple\obj\Debug\net5.0\LiskovSubstitutionPrinciple.dll
+D:\Code\GitRepository\MyStudy\DesignPrinciples\LiskovSubstitutionPrinciple\obj\Debug\net5.0\ref\LiskovSubstitutionPrinciple.dll
+D:\Code\GitRepository\MyStudy\DesignPrinciples\LiskovSubstitutionPrinciple\obj\Debug\net5.0\LiskovSubstitutionPrinciple.pdb
+D:\Code\GitRepository\MyStudy\DesignPrinciples\LiskovSubstitutionPrinciple\obj\Debug\net5.0\LiskovSubstitutionPrinciple.genruntimeconfig.cache
