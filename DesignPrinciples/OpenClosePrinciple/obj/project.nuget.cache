@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "+94L5kOdssUVIEjCv9JrQ/oes+h/5YUTbPwdc27erct1BAUuQ5LJUd92HdUrNMG/Ba1hjMFX/hE+jRKIdrFnFg==",
+  "dgSpecHash": "GSMAAdw8tgP1HYfEmypSpsq/itZe4pD+gcWaubXG0BN7z483EL0Oalgx39puWU6JV1/5mHD7tfDNYow5d9aLiA==",
   "success": true,
-  "projectFilePath": "D:\\Code\\GitRepository\\MyStudy\\DesignPrinciples\\OpenClosePrinciple\\OpenClosePrinciple.csproj",
+  "projectFilePath": "E:\\Git\\MyStudy\\DesignPrinciples\\OpenClosePrinciple\\OpenClosePrinciple.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

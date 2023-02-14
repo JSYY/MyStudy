@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "SBgZm8w54gH1yTjF6sg6m/yWanTc4W7AEVlRUIxcr70mEv/sfBM5QP8r9UntuDjNI00PmxzCUhBrnY/jFWnBCg==",
+  "dgSpecHash": "kUkchDiyJC6y65oaxzNm02+k8vTyw4KKtYCFH/LYfzi7K6Fld0jb24G83sEr9BeABGRw+5TYwiflNRLhKZapdA==",
   "success": true,
-  "projectFilePath": "D:\\Code\\GitRepository\\MyStudy\\DesignPrinciples\\LiskovSubstitutionPrinciple\\LiskovSubstitutionPrinciple.csproj",
+  "projectFilePath": "E:\\Git\\MyStudy\\DesignPrinciples\\LiskovSubstitutionPrinciple\\LiskovSubstitutionPrinciple.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "K4ux7A0oJmXwILLlHrCMn/izCbKe4TKGgoEJl+ScLidu9pzDWq06z0Hmz2dozK9sa6kY12JTcVKVlCkOZHWQSg==",
+  "dgSpecHash": "E6xDzRsYgKckf+EN3sJI8V45wpU9blby+koUl1oDN+K3lv0j+dLVonilSkmEV4p7ukiVfbBB57kFW2kn0MTs/w==",
   "success": true,
-  "projectFilePath": "D:\\Code\\GitRepository\\MyStudy\\DesignPrinciples\\DependenceInversionPrinciple\\DependenceInversionPrinciple.csproj",
+  "projectFilePath": "E:\\Git\\MyStudy\\DesignPrinciples\\DependenceInversionPrinciple\\DependenceInversionPrinciple.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

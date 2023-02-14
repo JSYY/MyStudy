@@ -1,4 +1,4 @@
-﻿using InterfaceSegregationPrinciple.InterfaceDefine;
+﻿using InterfaceSegregationPrinciple.WorflowACondition;
 using System;
 using System.Collections.Generic;
 
@@ -17,12 +17,17 @@ namespace InterfaceSegregationPrinciple
             
             Conditions1 conditions1 = new Conditions1();
             Conditions2 conditions2 = new Conditions2();
+            ICommonCheckCondition commonCheckCondition = new CommonChcekCondition();
+            CommonConditionProxyForA commonConditionProxyForA = new CommonConditionProxyForA(commonCheckCondition);
+            CommonConditionProxyForB commonConditionProxyForB = new CommonConditionProxyForB(commonCheckCondition);
+
             List<IConditionCheckForWorkflowA> list1 = new List<IConditionCheckForWorkflowA>();
             list1.Add(conditions1);
-            list1.Add(conditions2);
+            list1.Add(commonConditionProxyForA);
 
             List<IConditionCheckForWorkflowB> list2 = new List<IConditionCheckForWorkflowB>();
-            list2.Add(conditions1);
+            list2.Add(conditions2);
+            list2.Add(commonConditionProxyForB);
 
             WorkflowA workflowA = new WorkflowA(list1);
             WorkflowB workflowB = new WorkflowB(list2);
@@ -30,9 +35,6 @@ namespace InterfaceSegregationPrinciple
             workflowA.DoSomething();
             workflowB.DoSomething();
 
-            //对于上述条件判断的接口，因为不同的工作流可能会运用不同的条件，这些条件可能会重用，重用的条件就去实现对应的IConditionCheckForWorkflowXXX
-            //如果某个工作流有新增的条件判断，则增加该工作流条件判断接口的实现类
-            //每个接口实现类中的方法都是独立的，专门的
 
             Console.ReadKey();
         }

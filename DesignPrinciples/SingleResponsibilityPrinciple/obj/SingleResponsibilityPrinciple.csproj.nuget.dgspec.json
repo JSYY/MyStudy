@@ -1,23 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Code\\GitRepository\\MyStudy\\DesignPrinciples\\SingleResponsibilityPrinciple\\SingleResponsibilityPrinciple.csproj": {}
+    "E:\\Git\\MyStudy\\DesignPrinciples\\SingleResponsibilityPrinciple\\SingleResponsibilityPrinciple.csproj": {}
   },
   "projects": {
-    "D:\\Code\\GitRepository\\MyStudy\\DesignPrinciples\\SingleResponsibilityPrinciple\\SingleResponsibilityPrinciple.csproj": {
+    "E:\\Git\\MyStudy\\DesignPrinciples\\SingleResponsibilityPrinciple\\SingleResponsibilityPrinciple.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Code\\GitRepository\\MyStudy\\DesignPrinciples\\SingleResponsibilityPrinciple\\SingleResponsibilityPrinciple.csproj",
+        "projectUniqueName": "E:\\Git\\MyStudy\\DesignPrinciples\\SingleResponsibilityPrinciple\\SingleResponsibilityPrinciple.csproj",
         "projectName": "SingleResponsibilityPrinciple",
-        "projectPath": "D:\\Code\\GitRepository\\MyStudy\\DesignPrinciples\\SingleResponsibilityPrinciple\\SingleResponsibilityPrinciple.csproj",
-        "packagesPath": "C:\\Users\\旧时佑忆\\.nuget\\packages\\",
-        "outputPath": "D:\\Code\\GitRepository\\MyStudy\\DesignPrinciples\\SingleResponsibilityPrinciple\\obj\\",
+        "projectPath": "E:\\Git\\MyStudy\\DesignPrinciples\\SingleResponsibilityPrinciple\\SingleResponsibilityPrinciple.csproj",
+        "packagesPath": "C:\\Users\\jiawei.lu\\.nuget\\packages\\",
+        "outputPath": "E:\\Git\\MyStudy\\DesignPrinciples\\SingleResponsibilityPrinciple\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "D:\\VS2019-shared\\NuGetPackages"
+          "D:\\vs2019\\share component\\NuGetPackages",
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\旧时佑忆\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\jiawei.lu\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -58,7 +59,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.101\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.406\\RuntimeIdentifierGraph.json"
         }
       }
     }

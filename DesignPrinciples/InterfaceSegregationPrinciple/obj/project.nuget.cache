@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "f9oHQ+y65UMsBV6MzFX0Im+ROK1wNbqNSS9jZsCtyUWYIMT7JZrgflYplIy2EgF+Fh/Za9VyzVdfwMpSfcq55Q==",
+  "dgSpecHash": "7RTGyEq833L7PgInXA/z8XNe8YKtDpeLLsqTWchMElkoboA+3tcwH3m4u6/4h4kDJzKwW6CATg55NRt5njizfQ==",
   "success": true,
-  "projectFilePath": "D:\\Code\\GitRepository\\MyStudy\\DesignPrinciples\\InterfaceSegregationPrinciple\\InterfaceSegregationPrinciple.csproj",
+  "projectFilePath": "E:\\Git\\MyStudy\\DesignPrinciples\\InterfaceSegregationPrinciple\\InterfaceSegregationPrinciple.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }
