@@ -35,6 +35,7 @@ namespace InterfaceSegregationPrinciple
             workflowA.DoSomething();
             workflowB.DoSomething();
 
+
         }
     }
 }
