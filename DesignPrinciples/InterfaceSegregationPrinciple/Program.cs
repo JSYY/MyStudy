@@ -35,8 +35,6 @@ namespace InterfaceSegregationPrinciple
             workflowA.DoSomething();
             workflowB.DoSomething();
 
-
-            Console.ReadKey();
         }
     }
 }
