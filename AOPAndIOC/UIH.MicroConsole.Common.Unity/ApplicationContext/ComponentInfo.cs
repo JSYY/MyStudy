@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace UIH.MicroConsole.Common.Unity.ApplicationContext
+namespace MyUnity.ApplicationContext
 {
     public class ComponentInfo
     {

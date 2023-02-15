@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
-using UIH.MicroConsole.Common.Unity.ApplicationContext;
-using UIH.MicroConsole.Common.Unity.Attributes;
+using MyUnity.ApplicationContext;
+using MyUnity.Attributes;
 using Unity.Interception.PolicyInjection.Pipeline;
 
-namespace UIH.MicroConsole.Common.Unity.Aspects
+namespace MyUnity.Aspects
 {
     public abstract class BasicInterfaceAspect : ICallHandler
     {

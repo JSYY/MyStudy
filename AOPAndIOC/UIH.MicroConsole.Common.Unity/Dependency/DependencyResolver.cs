@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using UIH.MicroConsole.Common.Unity.Attributes;
-using UIH.MicroConsole.Common.Unity.Modules;
+using MyUnity.Attributes;
+using MyUnity.Modules;
 
-namespace UIH.MicroConsole.Common.Unity.Dependency
+namespace MyUnity.Dependency
 {
     public static class DependencyResolver
     {

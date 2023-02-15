@@ -1,7 +1,7 @@
 ﻿using System.Linq;
 using System.Reflection;
 
-namespace UIH.MicroConsole.Common.Unity.Aspects
+namespace MyUnity.Aspects
 {
     internal static class MethodHelper
     {

@@ -1,7 +1,7 @@
 ﻿using System;
-using UIH.MicroConsole.Common.Unity.Condition;
+using MyUnity.Condition;
 
-namespace UIH.MicroConsole.Common.Unity.Attributes
+namespace MyUnity.Attributes
 {
     [AttributeUsage(AttributeTargets.Class, Inherited = false)]
     public class ComponentAttribute : Attribute

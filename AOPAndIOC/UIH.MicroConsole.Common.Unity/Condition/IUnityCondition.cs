@@ -1,4 +1,4 @@
-﻿namespace UIH.MicroConsole.Common.Unity.Condition
+﻿namespace MyUnity.Condition
 {
     public interface IUnityCondition
     {

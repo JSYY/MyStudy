@@ -1,4 +1,4 @@
-﻿namespace UIH.MicroConsole.Common.Unity.Modules
+﻿namespace MyUnity.Modules
 {
     public abstract class UnityModule : IUnityModule
     {

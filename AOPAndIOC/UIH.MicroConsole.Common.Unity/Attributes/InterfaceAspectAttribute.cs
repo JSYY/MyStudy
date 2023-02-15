@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace UIH.MicroConsole.Common.Unity.Attributes
+namespace MyUnity.Attributes
 {
     [AttributeUsage(AttributeTargets.Class, Inherited = false)]
     public class InterfaceAspectAttribute : Attribute

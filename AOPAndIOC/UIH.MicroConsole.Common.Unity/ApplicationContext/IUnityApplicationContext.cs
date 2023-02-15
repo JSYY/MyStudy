@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace UIH.MicroConsole.Common.Unity.ApplicationContext
+namespace MyUnity.ApplicationContext
 {
     public interface IUnityApplicationContext
     {

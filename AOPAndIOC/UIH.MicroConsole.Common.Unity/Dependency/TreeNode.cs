@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace UIH.MicroConsole.Common.Unity.Dependency
+namespace MyUnity.Dependency
 {
     public class TreeNode<T>
     {

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 
-namespace UIH.MicroConsole.Common.Unity.ApplicationContext
+namespace MyUnity.ApplicationContext
 {
     public class UnityConfiguration : IUnityConfiguration
     {

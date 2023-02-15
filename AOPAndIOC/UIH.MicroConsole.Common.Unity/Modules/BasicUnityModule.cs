@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
-using UIH.MicroConsole.Common.Unity.ApplicationContext;
-using UIH.MicroConsole.Common.Unity.Attributes;
+using MyUnity.ApplicationContext;
+using MyUnity.Attributes;
 
-namespace UIH.MicroConsole.Common.Unity.Modules
+namespace MyUnity.Modules
 {
     public abstract class BasicUnityModule : UnityModule
     {

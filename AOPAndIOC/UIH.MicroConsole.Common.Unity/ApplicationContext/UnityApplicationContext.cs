@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using UIH.MicroConsole.Common.Unity.Condition;
-using UIH.MicroConsole.Common.Unity.Dependency;
-using UIH.MicroConsole.Common.Unity.Modules;
+using MyUnity.Condition;
+using MyUnity.Dependency;
+using MyUnity.Modules;
 using Unity;
 using Unity.Injection;
 using Unity.Interception;
@@ -12,7 +12,7 @@ using Unity.Interception.PolicyInjection;
 using Unity.Interception.PolicyInjection.MatchingRules;
 using Unity.Lifetime;
 
-namespace UIH.MicroConsole.Common.Unity.ApplicationContext
+namespace MyUnity.ApplicationContext
 {
     class UnityApplicationContext : IUnityApplicationContext, IDisposable
     {

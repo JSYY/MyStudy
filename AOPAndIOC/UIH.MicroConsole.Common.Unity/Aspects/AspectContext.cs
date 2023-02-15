@@ -1,4 +1,4 @@
-﻿namespace UIH.MicroConsole.Common.Unity.Aspects
+﻿namespace MyUnity.Aspects
 {
     public class AspectContext
     {

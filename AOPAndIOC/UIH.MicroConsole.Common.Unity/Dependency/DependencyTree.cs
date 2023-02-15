@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 
-namespace UIH.MicroConsole.Common.Unity.Dependency
+namespace MyUnity.Dependency
 {
     public class DependencyTree<T> where T : class
     {

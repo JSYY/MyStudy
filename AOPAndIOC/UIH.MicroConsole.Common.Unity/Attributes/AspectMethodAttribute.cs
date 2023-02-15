@@ -1,7 +1,7 @@
 ﻿using System;
-using UIH.MicroConsole.Common.Unity.ApplicationContext;
+using MyUnity.ApplicationContext;
 
-namespace UIH.MicroConsole.Common.Unity.Attributes
+namespace MyUnity.Attributes
 {
     [AttributeUsage(AttributeTargets.Method, Inherited = false)]
     public class AspectMethodAttribute : Attribute
