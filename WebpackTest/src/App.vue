@@ -1,5 +1,5 @@
 <template>
-    <div>this is a test</div>
+    <div class="test">this is a test</div>
 </template>
 
 <script lang="js">
@@ -8,6 +8,10 @@
     }
 </script>
 
-<style scoped>
-
+<style lang="css" scoped>
+    .test{
+        width:100px;
+        height:100px;
+        background-color:aquamarine;
+    }
 </style>

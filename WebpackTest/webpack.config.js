@@ -8,7 +8,17 @@ module.exports = {
     },
     module: {
         rules: [
-            {test:/\.vue$/,use:'vue-loader'},
+            { test: /\.vue$/, use: 'vue-loader' },
+            {
+                test: /\.css$/, use: [
+                    {
+                        loader:'vue-style-loader'
+                    },
+                    {
+                        loader:'css-loader'
+                    }
+                ]
+            }
         ],
     },
     plugins: [
