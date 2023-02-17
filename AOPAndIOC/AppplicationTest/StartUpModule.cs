@@ -1,4 +1,6 @@
-﻿using MyUnity.ApplicationContext;
+﻿using ApplicationMain;
+using MyUnity.ApplicationContext;
+using MyUnity.Attributes;
 using MyUnity.Modules;
 using System;
 using System.Collections.Generic;
@@ -8,12 +10,13 @@ using System.Threading.Tasks;
 
 namespace AppplicationTest
 {
-    public class StartUpModule: BasicUnityModule
+    [DependsOn(typeof(MainModule))]
+    public class StartUpModule: UnityModule
     {
-        public StartUpModule(IUnityApplicationContext applicationContext, IUnityConfiguration configuration)
-            : base(applicationContext, configuration)
+        private readonly IUnityApplicationContext _applicationContext;
+        public StartUpModule(IUnityApplicationContext applicationContext)
         {
-
+            _applicationContext = applicationContext;
         }
     }
 }
