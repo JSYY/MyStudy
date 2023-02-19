@@ -1,5 +1,9 @@
 <template>
-    <div class="test">this is a test</div>
+    <div class="main">
+        <div class="test">this is a test</div>
+        <div class="image-test"></div>
+    </div>
+    
 </template>
 
 <script lang="js">
@@ -9,9 +13,20 @@
 </script>
 
 <style lang="css" scoped>
+    .main{
+        width:100%;
+        height:100%;
+        background-color:antiquewhite;
+        display:flex;
+        flex-direction:column;
+    }
     .test{
-        width:100px;
-        height:100px;
-        background-color:aquamarine;
+        width:200px;
+        height:200px;
+        background-color:blue;
+    }
+    .image-test{
+        height:1000px;
+        background:url(../public/catImage.jpg);
     }
 </style>
