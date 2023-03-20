@@ -12,9 +12,8 @@ namespace UIH.MicroConsole.Common.Unity.ExcuteOrder
         public static List<T> Sort<T>(List<T> conditionHandlers)
         {
             conditionHandlers.Sort((x, y) => {
-                var a = (HandlerOrderAttribute)x.GetType().GetCustomAttributes(typeof(HandlerOrderAttribute), false).FirstOrDefault();
-                var b = (HandlerOrderAttribute)y.GetType().GetCustomAttributes(typeof(HandlerOrderAttribute), false).FirstOrDefault();
-                return a.ExcuteOrder.CompareTo(b.ExcuteOrder);
+                return ((HandlerOrderAttribute)x.GetType().GetCustomAttributes(typeof(HandlerOrderAttribute), false).FirstOrDefault()).ExcuteOrder.
+                CompareTo(((HandlerOrderAttribute)y.GetType().GetCustomAttributes(typeof(HandlerOrderAttribute), false).FirstOrDefault()).ExcuteOrder);
             });
             return conditionHandlers;
         }
