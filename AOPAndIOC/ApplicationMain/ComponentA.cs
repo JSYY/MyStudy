@@ -5,6 +5,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using UIH.MicroConsole.Common.Unity.Attributes;
+using UIH.MicroConsole.Common.Unity.ExcuteOrder;
 
 namespace ApplicationMain
 {
@@ -19,14 +21,7 @@ namespace ApplicationMain
         private List<IConditionHandler> _conditionHandlers;
         public ComponentA(List<IConditionHandler> conditionHandlers)
         {
-            _conditionHandlers = Sort(conditionHandlers);
-
-        }
-
-        private List<IConditionHandler> Sort(List<IConditionHandler> conditionHandlers)
-        {
-            conditionHandlers.Sort((x,y)=>x.GetExcuteOrder().CompareTo(y.GetExcuteOrder()));
-            return conditionHandlers;
+            _conditionHandlers = ExcuteOrderHelper.Sort<IConditionHandler>(conditionHandlers);
         }
 
         public void FunctionA()

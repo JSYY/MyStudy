@@ -10,8 +10,5 @@ namespace ApplicationMain.ConditionsHandler
     public interface IConditionHandler
     {
         void Excute();
-        int GetExcuteOrder();
     }
-
-   
 }
