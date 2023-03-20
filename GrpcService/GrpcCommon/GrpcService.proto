@@ -1,0 +1,21 @@
+﻿syntax = "proto3";		//指定语法proto2或proto3 本文采用proto3
+ 
+//package gRpcDemo;		//指定命名空间
+option csharp_namespace = "gRpcDemo";
+ 
+//定义rpc服务
+service GrpcService
+{
+	rpc SendMessage (Message) returns (Relay);
+}
+//定义查询条件消息体
+message Message{
+	int32 ID = 1;
+	bytes bytesData = 2;
+	string sender = 3;
+	string receiver = 4;
+}
+message Relay{
+	bytes bytesData = 1;
+	int32 resultID = 2;
+}
