@@ -16,6 +16,7 @@ namespace ApplicationMain
         public override void PostInitialize()
         {
             _applicationContext.GetObject<IComponentA>().FunctionA();
+            Console.WriteLine(_applicationContext.GetObject<IComponentB>().GetNumber());
         }
     }
 }
