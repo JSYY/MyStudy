@@ -1,4 +1,5 @@
-﻿using GrpcCommon;
+﻿using Google.Protobuf;
+using GrpcCommon;
 using GrpcCommon.GrpcCommunication;
 using System;
 
@@ -17,7 +18,10 @@ namespace ProcessA
 
         private static int handler(byte[] input, out byte[] output, object context)
         {
-            output = null;
+            var data = GrpcData.Parser.ParseFrom(input);
+            GrpcData grpcData = new GrpcData() { IntData = 123, StringData = "666" };
+            Console.WriteLine(data.ToString());
+            output = grpcData.ToByteArray();
             return 0;
         }
     }

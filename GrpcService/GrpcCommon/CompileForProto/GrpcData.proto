@@ -1,0 +1,10 @@
+﻿syntax = "proto3";
+
+message GrpcData
+{
+	string stringData = 1;
+	int64 intData = 2;
+}
+
+
+
