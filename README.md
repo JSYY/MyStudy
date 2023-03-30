@@ -1,6 +1,6 @@
 # MyStudy
 ## 2023/3/30 更新
-hammerjs的使用demo
+## hammerjs的使用demo
 注意ES5在引入js模块时会报错，导致项目编译无法进行，需要在tsconfog.json中修改target为esnext，esnext表示使用最新的ES语法
 hammerjs配合canvas可以用于制作web界面 box的拖动、平移、坐标变化等操作
 
