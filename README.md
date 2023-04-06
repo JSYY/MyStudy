@@ -4,7 +4,8 @@
 1.webpack打包学习完善  
 2.Socket通信研究  
 3.多线程总结  
-4.完善webbox
+4.完善webbox  
+5.浅学一下高并发的处理
 
 ## 2023/3/30 更新
 hammerjs的使用demo  
