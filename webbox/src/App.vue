@@ -1,5 +1,8 @@
 <template>
-    <div class="line" :style="location"></div>
+    <div class="main">
+        <div class="line" :style="location"></div>
+    </div>
+   
 </template>
 
 <script lang="ts">
@@ -52,9 +55,21 @@
 </script>
 
 <style lang="scss">
+    body {
+        padding: 0px;
+        margin: 0;
+        user-select: none;
+    }
+    .main {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        background-color: antiquewhite;
+        overflow:hidden;
+    }
     .line {
         width: 100px;
-        height: 2px;
+        height: 5px;
         background-color: black;
         cursor: ns-resize;
         margin-top:100px;
