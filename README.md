@@ -1,8 +1,18 @@
 # MyStudy
+
+## 待办事项   
+1.webpack打包学习完善  
+2.Socket通信研究  
+3.多线程总结  
+4.完善webbox  
+5.浅学一下高并发的处理
+
 ## 2023/3/30 更新
 hammerjs的使用demo  
 注意ES5在引入js模块时会报错，导致项目编译无法进行，需要在tsconfog.json中修改target为esnext，esnext表示使用最新的ES语法  
-hammerjs配合canvas可以用于制作web界面 box的拖动、平移、坐标变化等操作
+hammerjs配合canvas可以用于制作web界面 box的拖动、平移、坐标变化等操作  
+摄像头的web前端展示方案
+FFmpeg推流，然后websocket开启端口再将流展示到html网页，使用了jsmpeg的第三方库
 
 ## 2023/3/22 更新  
 项目已有内容  
@@ -11,8 +21,4 @@ hammerjs配合canvas可以用于制作web界面 box的拖动、平移、坐标�
 3.webpack打包发布  
 4.六大设计原则整理  
 
-待办事项  
-1.将已有的通信封装移植到unity框架上，做一层ServiceManager的转换，通过反射、特性标注等手段帮助通信注册  
-2.webpack打包学习完善  
-3.Socket底层通信研究  
-4.多线程研究  
+
