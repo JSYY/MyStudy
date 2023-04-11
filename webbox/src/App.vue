@@ -1,6 +1,6 @@
 <template>
     <div class="main">
-        <div class="line" :style="location"></div>
+        <div class="line" :style="locationLine"></div>
     </div>
    
 </template>
@@ -11,44 +11,43 @@
 
     export default {
         setup() {
-            let dragBlockElements: any;
-            let location = ref();
+            let lineElement: any;
+            let locationLine = ref();
             let locationX = 0;
             let locationY = 0;
+            let angle = 0;
 
             onMounted(() => {
-                dragBlockElements = document.querySelectorAll('.line');
+                lineElement = document.querySelector('.line');
                 initPlanbox();
             });
 
             function initPlanbox() {
-                if (dragBlockElements)
-                    dragBlockElements.forEach(block => {
-                        registerPanEvent(block, (ev: Hammer.Input) => { handleDragBlockEvent(ev) });
-                    })
+                if (lineElement) {
+                    registerPanEvent(lineElement, (ev: Hammer.Input) => { handleLineEvent(ev) });
+                }
             }
+
             function registerPanEvent(element: HTMLElement, handle: Function): void {
                 let hammer = new Hammer(element)
 
                 hammer.get('pan').set({ direction: Hammer.DIRECTION_ALL });
                 hammer.on('panstart', (ev: Hammer.Input) => { handle(ev) });
                 hammer.on('panmove', (ev: Hammer.Input) => handle(ev));
-                console.log(hammer);
+                hammer.on('rotatestart', (ev: Hammer.Input) => handle(ev));
+                hammer.on('rotatemove', (ev: Hammer.Input) => handle(ev));
             }
 
-            function handleDragBlockEvent(e: Hammer.Input): void {
-                console.log(e);
+            function handleLineEvent(e: Hammer.Input): void {
                 locationX = e.deltaX;
                 locationY = e.deltaY;
-                relocate();
-            }
-
-            function relocate() {
-                location.value = { 'transform': `translate(${locationX}px,${locationY}px)` };
+                angle = e.angle;
+                console.log(e);
+                locationLine.value = { 'transform': `translate(${locationX}px,${locationY}px) rotate(${angle}deg)` };
             }
 
             return {
-                location
+                locationLine
             }
         }
     }
@@ -74,5 +73,11 @@
         cursor: ns-resize;
         margin-top:100px;
         margin-left:100px;
+    }
+    .rectangle
+    {
+        width:80px;
+        height:50px;
+        background-color:coral;
     }
 </style>
