@@ -27,6 +27,7 @@
 
             onMounted(() => {
                 line = document.querySelectorAll('.line');
+                canvasEle = document.querySelector('.canvas');
                 initbox();
                 register();
             });
@@ -36,10 +37,8 @@
                 boxData.height = 200;
                 boxData.positionY = 0;
                 boxData.positionX = 0;
-
+                boxData.angle = 0;
                 updateCache(boxData);
-
-                canvasEle = document.querySelector('.canvas');
 
                 context = canvasEle.getContext('2d');
                 context.strokeStyle = 'black';
@@ -55,7 +54,6 @@
                         registerPanEvent(item, (ev: Hammer.Input) => { handleLineEvent(ev) });
                     });
                 }
-
                 if (canvasEle) {
                     registerPanEvent(canvasEle, (ev: Hammer.Input) => { handleCanvasMoveEvent(ev) });
                 }
@@ -72,6 +70,7 @@
             function handleCanvasMoveEvent(e: Hammer.Input): void {
                 boxData.positionX = boxDataCache.positionX + e.deltaX;
                 boxData.positionY = boxDataCache.positionY + e.deltaY;
+                boxData.angle = boxDataCache.angle + e.angle;
                 relocate();
                 e.srcEvent.stopImmediatePropagation();
             }
@@ -104,10 +103,10 @@
             }
 
             function relocate() {
-                location.value = { 'transform': `translate(${boxData.positionX}px,${boxData.positionY}px)` };
+                location.value = { 'transform': `translate(${boxData.positionX}px,${boxData.positionY}px) rotate(${boxData.angle}deg)` };
+                rectangle.value = { 'height': `${boxData?.height}px`, 'width': `${boxData?.width}px` };
                 canvasData.value.height = boxData?.height;
                 canvasData.value.width = boxData?.width;
-                
             }
 
             function updateCache(data: BoxData) {
@@ -128,6 +127,7 @@
         height: number = 0;
         positionX: number = 0;//boxµÄ×ø±ê
         positionY: number = 0;
+        angle: number = 0;
     }
 </script>
 
@@ -142,6 +142,7 @@
         height: min-content;
         width: min-content;
         margin: 100px;
+        background-color: #bbf5ef;
     }
     .main {
         width: 100%;
