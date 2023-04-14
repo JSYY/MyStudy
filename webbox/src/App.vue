@@ -126,7 +126,7 @@
     export class BoxData {
         width: number=0;
         height: number = 0;
-        positionX: number = 0;
+        positionX: number = 0;//boxµÄ×ø±ê
         positionY: number = 0;
     }
 </script>
