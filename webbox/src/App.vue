@@ -114,6 +114,7 @@
                 boxDataCache.width = data.width;
                 boxDataCache.positionX = data.positionX;
                 boxDataCache.positionY = data.positionY;
+                boxDataCache.angle = data.angle;
             }
 
             return {
