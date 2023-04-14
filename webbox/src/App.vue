@@ -21,8 +21,6 @@
             let line;
             let boxData = new BoxData();
             let boxDataCache = new BoxData();
-            let actionData = new ActionData();
-            let movePositionData = new ActionData();
             let context: CanvasRenderingContext2D;
             let canvasEle;
             let canvasData = ref({ height: 0, width: 0 });
@@ -34,8 +32,10 @@
             });
 
             function initbox() {
-                boxData.lengthX = 200;
-                boxData.lengthY = 200;
+                boxData.width = 200;
+                boxData.height = 200;
+                boxData.positionY = 0;
+                boxData.positionX = 0;
 
                 updateCache(boxData);
 
@@ -44,9 +44,9 @@
                 context = canvasEle.getContext('2d');
                 context.strokeStyle = 'black';
                 context.lineWidth = 2;
-                context.strokeRect(1, 1, boxData.lengthX, boxData.lengthY);
-                canvasData.value.height = boxData.lengthY;
-                canvasData.value.width = boxData.lengthX;
+                context.strokeRect(1, 1, boxData.width, boxData.height);
+                canvasData.value.height = boxData.height;
+                canvasData.value.width = boxData.width;
             }
 
             function register() {
@@ -70,12 +70,8 @@
             }
 
             function handleCanvasMoveEvent(e: Hammer.Input): void {
-                if (e.type == 'panmove') {
-                    movePositionData.actionX = e.deltaX;
-                    movePositionData.actionY = e.deltaY;
-                    movePositionData.angle = e.angle;
-                    console.log(movePositionData);
-                }
+                boxData.positionX = boxDataCache.positionX + e.deltaX;
+                boxData.positionY = boxDataCache.positionY + e.deltaY;
                 relocate();
                 e.srcEvent.stopImmediatePropagation();
             }
@@ -84,25 +80,22 @@
 
             function handleLineEvent(e: Hammer.Input): void {
                 console.log(e);
-                if (e.additionalEvent == 'panright' || e.additionalEvent == 'panleft') {
-                    actionData.actionX = e.deltaX;
-                    calculateBoxDataX();
+                if (e.target.className.indexOf('right-line') > -1) {
+                    boxData.width = boxDataCache.width + e.deltaX;
                 }
-                if (e.additionalEvent == 'panup' || e.additionalEvent == 'pandown') {
-                    actionData.actionY = e.deltaY;
-                    calculateBoxDataY();
+                if (e.target.className.indexOf('left-line')>-1) {
+                    boxData.width = boxDataCache.width - e.deltaX;
+                    boxData.positionX = boxDataCache.positionX + e.deltaX;
+                }
+                if (e.target.className.indexOf('top-line') > -1) {
+                    boxData.height = boxDataCache.height - e.deltaY;
+                    boxData.positionY = boxDataCache.positionY + e.deltaY;
+                }
+                if (e.target.className.indexOf('bottom-line') > -1) {
+                    boxData.height = boxDataCache.height + e.deltaY;
                 }
                 relocate();
-
                 e.srcEvent.stopImmediatePropagation();
-            }
-
-            function calculateBoxDataX() {
-                boxData.lengthX = boxDataCache.lengthX + actionData.actionX;
-            }
-
-            function calculateBoxDataY() {
-                boxData.lengthY = boxDataCache.lengthY + actionData.actionY;
             }
 
             function completeAction() {
@@ -111,14 +104,17 @@
             }
 
             function relocate() {
-                canvasData.value.height = boxData.lengthY;
-                canvasData.value.width = boxData.lengthX;
-                location.value = { 'transform': `translate(${movePositionData.actionX}px,${movePositionData.actionY}px) rotate(${movePositionData.angle}deg)` };
+                location.value = { 'transform': `translate(${boxData.positionX}px,${boxData.positionY}px)` };
+                canvasData.value.height = boxData?.height;
+                canvasData.value.width = boxData?.width;
+                
             }
 
             function updateCache(data: BoxData) {
-                boxDataCache.lengthX = data.lengthX;
-                boxDataCache.lengthY = data.lengthY;
+                boxDataCache.height = data.height;
+                boxDataCache.width = data.width;
+                boxDataCache.positionX = data.positionX;
+                boxDataCache.positionY = data.positionY;
             }
 
             return {
@@ -128,13 +124,10 @@
     }
 
     export class BoxData {
-        lengthX: number=0;
-        lengthY: number=0;
-    }
-    export class ActionData {
-        actionX: number = 0;
-        actionY: number = 0;
-        angle: number = 0;
+        width: number=0;
+        height: number = 0;
+        positionX: number = 0;
+        positionY: number = 0;
     }
 </script>
 
