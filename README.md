@@ -1,11 +1,14 @@
 # MyStudy
 
-## 待办事项   
-1.webpack打包学习完善  
-2.Socket通信研究  
-3.多线程总结  
-4.完善webbox  
-5.浅学一下高并发的处理
+## 待办事项    
+1.Socket通信研究  
+2.多线程总结   
+3.浅学一下高并发的处理
+
+## 2023/4/18 更新
+webpackpack打包全流程  
+Unity流程图梳理  
+webbox拖动旋转功能完善
 
 ## 2023/3/30 更新
 hammerjs的使用demo  
