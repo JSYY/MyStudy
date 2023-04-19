@@ -2,9 +2,16 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 const { VueLoaderPlugin }  = require("vue-loader");
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const { DefinePlugin } = require('webpack');
+const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
 
 module.exports = {
-    mode:"development",
+    mode: "development",
+    optimization: {
+        minimizer: [
+            '...',
+            new CssMinimizerPlugin(),
+        ],
+    },
     entry: "./src/main.ts",
     module: {
         rules: [
@@ -49,7 +56,7 @@ module.exports = {
         new DefinePlugin({
                 '__VUE_OPTIONS_API__': true,//清除界面上的vue警告
                  '__VUE_PROD_DEVTOOLS__': false
-        })
+        }),
     ],
     target: "web",
     devServer: {
