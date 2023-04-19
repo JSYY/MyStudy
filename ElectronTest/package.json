@@ -1,0 +1,28 @@
+{
+  "name": "electrontest",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon --watch index.js --exec electron .",
+    "publish": "electron-builder --win --x64"
+  },
+  "author": "JSYY",
+  "license": "ISC",
+  "devDependencies": {
+    "electron": "^24.1.2",
+    "electron-builder": "^23.6.0",
+    "nodemon": "^2.0.22"
+  },
+  "build": {
+    "appId": "12345",
+    "copyright": "@jsyy",
+    "productName": "MyElectron", 
+    "win": {
+      "target": [
+        "portable" 
+      ]
+    }
+  }
+}
