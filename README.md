@@ -5,7 +5,7 @@
 2.多线程总结   
 3.浅学一下高并发的处理  
 4.electron 研究  
-5.vue component插件打包研究
+5.创建一个自己风格的vue公共组件库
 
 ## 2023/4/19 更新
 electron初步研究：启动、打包发布、内部html事件通知到windows
