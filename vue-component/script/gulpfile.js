@@ -72,3 +72,10 @@ function buildLib(){
 exports.types = gulp.series(compile);
 exports.buildLib = gulp.series(buildLib);
 exports.default = gulp.series(clean, buildLib, compile);
+
+//gulp.src(filePath / pathArr) :
+//指向指定路径的所有文件, 返回文件流对象
+//用于读取文件
+//gulp.dest(dirPath / pathArr)
+//指向指定的所有文件夹
+//用于向文件夹中输出文件
