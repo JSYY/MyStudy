@@ -1,15 +1,21 @@
 <template>
     <div class="main">
         <h1 style="color:red">{{ name }}</h1>
+        <MyButton :name="'Test Button'"></MyButton>
     </div>
+   
 </template>
 
 
 <script lang="ts">
 
     import { defineComponent } from "vue";
+    import { MyButton } from '../node_modules/my-component';
 
     export default defineComponent({
+        components: {
+            MyButton
+        },
         setup() {
             const name = "123";
 

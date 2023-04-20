@@ -1,0 +1,36 @@
+{
+  "name": "my-component",
+  "version": "0.1.0",
+  "types": "lib/index.d.ts",
+  "main": "dist/my-component.umd.js",
+  "unpkg": "dist/my-component.umd.min.js",
+  "private": true,
+  "scripts": {
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build",
+    "build-lib": "vue-cli-service build --target lib src/index.ts",
+    "types": "gulp -f ./script/gulpfile.js types"
+  },
+  "dependencies": {
+    "core-js": "^3.8.3",
+    "gulp": "^4.0.2",
+    "vue": "^3.2.13"
+  },
+  "devDependencies": {
+    "@vue/cli-plugin-babel": "~5.0.0",
+    "@vue/cli-plugin-typescript": "~5.0.0",
+    "@vue/cli-service": "~5.0.0",
+    "less": "^4.0.0",
+    "less-loader": "^8.0.0",
+    "typescript": "~4.5.5",
+    "webpack-node-externals": "^2.5.2",
+    "gulp": "^4.0.2",
+    "gulp-typescript": "^6.0.0-alpha.1"
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not dead",
+    "not ie 11"
+  ]
+}
