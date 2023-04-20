@@ -15,7 +15,7 @@
     "types": [
       "webpack-env"
     ],
-    "outDir": "./modules/my-component/lib",
+    "outDir": "../modules/my-component/lib",
     "paths": {
       "@/*": [
         "src/*"
