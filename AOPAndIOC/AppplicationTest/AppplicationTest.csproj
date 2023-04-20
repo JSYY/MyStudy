@@ -7,7 +7,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\ApplicationMain\ApplicationMain.csproj" />
-    <ProjectReference Include="..\UIH.MicroConsole.Common.Unity\MyUnity.csproj" />
+    <ProjectReference Include="..\MyUnity\MyUnity.csproj" />
   </ItemGroup>
 
 </Project>
