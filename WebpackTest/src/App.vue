@@ -6,9 +6,7 @@
    
 </template>
 
-
 <script lang="ts">
-
     import { defineComponent } from "vue";
     import { MyButton } from '../node_modules/my-component';
 
