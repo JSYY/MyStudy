@@ -1,24 +1,27 @@
 <template>
     <div class="main">
         <h1 style="color:red">{{ name }}</h1>
-        <MyButton :name="'Test Button'"></MyButton>
+        <MyButton :name="'Test Button'" @click="func"></MyButton>
     </div>
-   
 </template>
 
 <script lang="ts">
     import { defineComponent } from "vue";
-    import { MyButton } from '../node_modules/my-component';
+
 
     export default defineComponent({
         components: {
-            MyButton
+            
         },
         setup() {
             const name = "123";
 
+            function func() {
+                console.log("function");
+            }
+
             return {
-                name,
+                name, func
             };
         },
     });

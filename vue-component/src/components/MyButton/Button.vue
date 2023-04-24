@@ -6,7 +6,8 @@
     import { defineComponent, onMounted } from 'vue';
 
 export default defineComponent({
-    name: 'HelloWorld',
+    //name必填，在导出时使用的就是这个名字
+    name: 'MyButton',
     props: {
         name: String
     },

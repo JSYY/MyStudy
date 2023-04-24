@@ -1,19 +1,20 @@
-import { App } from 'vue'
-import MyButton from '../src/components/MyButton'
+import { App } from 'vue';
+import { default as MyButton } from '../src/components/MyButton';
 
-// 所有组件列表
-const components = [ MyButton ]
+const components = [
+    MyButton
+];
 
-// 定义 install 方法， App 作为参数
-const install = (app: App): void => {
-    // 遍历注册所有组件
-    components.map((component) => app.component(component.name, component))
-}
+const install = function (app: App) {
+    components.forEach(component => {
+        app.use(component);
+    });
+    return app;
+};
 
 export {
-    MyButton
-}
+    install,
+    MyButton,
+};
 
-export default {
-    install
-}
+export * from './withInstall';

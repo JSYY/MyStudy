@@ -3,13 +3,22 @@ const { VueLoaderPlugin }  = require("vue-loader");
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const { DefinePlugin } = require('webpack');
 const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
+const TerserPlugin = require('terser-webpack-plugin');
 
 module.exports = {
     mode: "development",
     optimization: {
+        minimize: true,
         minimizer: [
-            '...',
             new CssMinimizerPlugin(),
+            new TerserPlugin({
+                parallel: true, // 可省略，默认开启并行
+                terserOptions: {
+                    toplevel: true, // 最高级别，删除无用代码
+                    ie8: true,
+                    safari10: true,
+                }
+            })
         ],
     },
     entry: "./src/main.ts",
@@ -38,7 +47,7 @@ module.exports = {
                 type: "asset",
                 generator: {
                     filename: "images/[name]-[hash][ext]",
-                },
+                }
             },
         ],
     },
