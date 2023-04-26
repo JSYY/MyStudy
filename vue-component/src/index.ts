@@ -1,8 +1,9 @@
 import { App } from 'vue';
 import { default as MyButton } from '../src/components/MyButton';
+import { default as MyInput } from '../src/components/MyInput';
 
 const components = [
-    MyButton
+    MyButton, MyInput
 ];
 
 const install = function (app: App) {
@@ -15,6 +16,7 @@ const install = function (app: App) {
 export {
     install,
     MyButton,
+    MyInput,
 };
 
 export * from './withInstall';
