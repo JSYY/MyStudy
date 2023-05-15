@@ -1,5 +1,8 @@
 <template>
-    <input class="myInput" v-model="inputVal" />
+    <div class="">
+        <div>{{name}}</div>
+        <input class="myInput" v-model="inputVal" />
+    </div>
 </template>
 
 <script lang="ts">

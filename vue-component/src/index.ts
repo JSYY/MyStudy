@@ -13,10 +13,6 @@ const install = function (app: App) {
     return app;
 };
 
-export {
-    install,
-    MyButton,
-    MyInput,
-};
+export default install;
 
 export * from './withInstall';
