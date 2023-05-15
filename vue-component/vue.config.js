@@ -1,6 +1,20 @@
 var nodeExternals = require('webpack-node-externals');
+const path = require('path');
 
 module.exports = {
+    pluginOptions: {
+        'style-resources-loader': {
+            preProcessor: 'less',
+            // 这三种 patterns 写法都是可以的
+            // patterns: ["./src/assets/reset1.less", "./src/assets/reset2.less"]
+            // patterns: "./src/assets/reset.less"
+            patterns: [
+                // 两种路径写法都可以，这里的路径不能使用 @ 符号，否则会报错
+                // path.resolve(__dirname, './src/assets/reset.less')
+                path.resolve(__dirname, 'src/assets/common.less')
+            ]
+        }
+    },
     lintOnSave: false,
     outputDir: './modules/my-component/dist',
     productionSourceMap: false,

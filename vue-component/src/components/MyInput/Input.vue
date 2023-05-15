@@ -33,5 +33,6 @@ export default defineComponent({
     .myInput {
         width: 100px;
         height: 30px;
+        background-color:@test-color;
     }
 </style>

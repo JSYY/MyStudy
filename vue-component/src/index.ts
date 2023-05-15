@@ -1,6 +1,7 @@
 import { App } from 'vue';
 import { default as MyButton } from '../src/components/MyButton';
 import { default as MyInput } from '../src/components/MyInput';
+import "../src/assets/common.less";
 
 const components = [
     MyButton, MyInput
