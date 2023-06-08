@@ -10,19 +10,15 @@
 
 <script lang="js">
     import { onMounted, ref } from "@vue/runtime-core";
+    import JSMpeg from './jsmpeg.min.js';
 export default {
   setup() {
     let flag = ref(false);
     onMounted(() => {
-      //var canvas = document.getElementById("video-canvas");
-      //var url = "ws://localhost:8992";
-      ////audio设置为false可以取消掉页面的 audiocontext警告
-      //  var video = new JSMpeg.Player(url, { canvas: canvas, audio: false, preserveDrawingBuffer: true });
-
-        var canvas = document.getElementById("video-canvas");
-                var url = "ws://localhost:18002";
-                //audio设置为false可以取消掉页面的 audiocontext警告
-                var video = new JSMpeg.Player(url, { canvas: canvas, audio: false, preserveDrawingBuffer: true });
+        let canvas = document.getElementById("video-canvas");
+        let url = "ws://localhost:18002";
+        //audio设置为false可以取消掉页面的 audiocontext警告
+        let video = new JSMpeg.Player(url, { canvas: canvas, audio: false, preserveDrawingBuffer: true });
       
     });
 
