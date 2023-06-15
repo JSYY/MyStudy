@@ -9,18 +9,25 @@
 </template>
 
 <script lang="js">
-    import { onMounted, ref } from "@vue/runtime-core";
+    import { onMounted, onUnmounted, ref } from "@vue/runtime-core";
     import JSMpeg from './jsmpeg.min.js';
 export default {
   setup() {
-    let flag = ref(false);
-    onMounted(() => {
-        let canvas = document.getElementById("video-canvas");
-        let url = "ws://localhost:18002";
-        //audio设置为false可以取消掉页面的 audiocontext警告
-        let video = new JSMpeg.Player(url, { canvas: canvas, audio: false, preserveDrawingBuffer: true });
-      
-    });
+        let flag = ref(false);
+        let video;
+
+        onMounted(() => {
+            let canvas = document.getElementById("video-canvas");
+            let url = "ws://localhost:18002";
+            video = new JSMpeg.Player(url, { canvas: canvas, audio: false, preserveDrawingBuffer: true });
+        });
+
+        onUnmounted(() => {
+            //实例销毁时关闭socket连接
+            video.source.shouldAttemptReconnect = false;
+            video.source.socket.close();
+            video = null;
+        });
 
     function openCamera() {
       flag.value=!flag.value;
