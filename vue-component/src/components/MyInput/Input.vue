@@ -12,7 +12,8 @@ export default defineComponent({
     //name必填，在导出时使用的就是这个名字
     name: 'MyInput',
     props: {
-        name: String
+        name: { type: String, default: '' },
+        value: [String, Number, Boolean],
     },
     setup(props: any) {
         let inputVal = ref();
@@ -33,6 +34,5 @@ export default defineComponent({
     .myInput {
         width: 100px;
         height: 30px;
-        background-color:@test-color;
     }
 </style>
