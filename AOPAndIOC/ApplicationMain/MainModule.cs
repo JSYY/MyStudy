@@ -17,6 +17,8 @@ namespace ApplicationMain
         {
             _applicationContext.GetObject<IComponentA>().FunctionA();
             Console.WriteLine(_applicationContext.GetObject<IComponentB>().GetNumber());
+            var C = _applicationContext.GetObject<IComponentC>();
+            _applicationContext.GetObject<IComponentD>().EventHappen();
         }
     }
 }
