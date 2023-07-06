@@ -8,7 +8,7 @@
 5.数据库通知封装实现
 
 ## 已有项目
-1.基于Unity的AOP/IOC框架  
+1.基于Unity的AOP/IOC框架/C#一些语法知识的Demo实现  
 2.设计原则/代码实践  
 3.Electron    
 4.Grpc实践  
