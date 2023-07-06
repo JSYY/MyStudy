@@ -21,22 +21,41 @@ namespace ApplicationMain
     public class ComponentC:IComponentC
     {
         private IComponentD _componentD;
+        private Dictionary<string, Func<int, string, string>> _dic;
 
         public ComponentC(IComponentD componentD)
         {
             _componentD = componentD;
+            _dic = new Dictionary<string, Func<int, string, string>>();
+            _dic.Add("1", MyFunc);
             _componentD.eventA += _componentC_eventA;
         }
 
         private void _componentC_eventA(object sender, MyEventArgs e)
         {
             Console.WriteLine("ComponentC receive eventA from ComponentD,id is {0},name is {1}",new object[] { e.id,e.name});
-            
+            Tuple<Func<int, string,string>, string> tuple = null;
             switch(e.id){
                 case 1:
-                    
+                    tuple = GenerateTuple(e);
                     break;
             }
+            var s = tuple.Item1.Invoke(e.id,e.name);
+            Console.WriteLine("Combining result is {0},After combining :{1}",new object[] { tuple.Item2,s});
+        }
+
+        private Tuple<Func<int,string,string>, string> GenerateTuple(MyEventArgs e)
+        {
+            if (_dic.ContainsKey(e.id.ToString()))
+            {
+                return new Tuple<Func<int, string, string>, string>(_dic[e.id.ToString()], "success");
+            }
+            return null;
+        }
+
+        private string MyFunc(int number,string name)
+        {
+            return name+ number.ToString();
         }
     }
 }
