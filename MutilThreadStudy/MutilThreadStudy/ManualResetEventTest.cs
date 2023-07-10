@@ -7,11 +7,11 @@ using System.Threading.Tasks;
 
 namespace MutilThreadStudy
 {
-    public class ResetEventTest
+    public class ManualResetEventTest
     {
         private ManualResetEvent _manualResetEvent;
 
-        public ResetEventTest()
+        public ManualResetEventTest()
         {
             _manualResetEvent = new ManualResetEvent(false);
         }
@@ -28,12 +28,12 @@ namespace MutilThreadStudy
 
         public void MyFunc()
         {
-            Console.WriteLine("MyFunc Start");
+            Console.WriteLine("ManualResetEventTest MyFunc Start");
             for(int i = 0; i < 10; i++)
             {
                 _manualResetEvent.WaitOne();
                 Thread.Sleep(2000);
-                Console.WriteLine("MyFunc:"+i);
+                Console.WriteLine("ManualResetEventTest MyFunc:" + i);
             }
         }
     }
