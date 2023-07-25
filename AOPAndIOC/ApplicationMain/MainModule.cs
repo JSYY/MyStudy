@@ -21,7 +21,7 @@ namespace ApplicationMain
             Console.WriteLine(_applicationContext.GetObject<IComponentB>().GetNumber());
             var C = _applicationContext.GetObject<IComponentC>();
             _applicationContext.GetObject<IComponentD>().EventHappen();
-            _applicationContext.GetObject<IComponentE>().CopyFloder(@"F:\Test", @"E:\target");
+            _applicationContext.GetObject<IComponentE>().CopyFolder(@"F:\Test", @"E:\target");
         }
     }
 }

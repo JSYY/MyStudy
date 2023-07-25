@@ -15,7 +15,7 @@ namespace ApplicationMain
     public interface IComponentE
     {
         void CopySingleFile(string sourceFile, string targetFile);
-        void CopyFloder(string sourcePath, string targetPath);
+        void CopyFolder(string sourcePath, string targetPath,bool deleteSourceFolder=false);
     }
 
     [Component]
@@ -33,6 +33,27 @@ namespace ApplicationMain
         public ComponentE()
         {
             _timer = new Timer(state => CalculateVelocityAndRemainingTime());
+        }
+
+        public void CopyFolder(string sourcePath, string targetPath, bool deleteSourceFolder = false)
+        {
+            //开始初始化文件与文件夹相关信息
+            Init(sourcePath);
+            //CreateFloder(targetPath);
+            _timer.Change(0, 1000);
+            int count = 1;
+            pathList.ForEach(item =>
+            {
+                var path = item.Replace(sourcePath, targetPath);
+                CreateFolder(targetPath);
+                CopyFile(item, path);
+                count++;
+            });
+            _timer.Change(Timeout.Infinite, 0);
+            if (deleteSourceFolder)
+            {
+                DeleteSorrceFolder(sourcePath);
+            }
         }
 
         private void CalculateVelocityAndRemainingTime()
@@ -67,24 +88,21 @@ namespace ApplicationMain
             return str;
         }
 
-        public void CopyFloder(string sourcePath,string targetPath)
+        private void DeleteSorrceFolder(string sourcePath)
         {
-            //开始初始化文件与文件夹相关信息
-            Init(sourcePath);
-            _timer.Change(0, 1000);
-            int count = 1;
-            pathList.ForEach(item =>
-            {
-                CopyFile(item, targetPath+count+"txt");
-                count++;
-            });
-            
-            _timer.Change(Timeout.Infinite, 0);
+            DirectoryInfo di = new DirectoryInfo(sourcePath);
+            di.Delete(true);
         }
 
-        private void CreateFloder(string targetPath)
+        private void CreateFolder(string targetFile)
         {
-            
+            var dir = targetFile.Split(@"\");
+            dir = dir.Take(dir.Length - 1).ToArray();
+            var path = string.Join("\\", dir);
+            if (!Directory.Exists(path))
+            {
+                Directory.CreateDirectory(path);
+            }
         }
 
         private void Init(string sourcePath)
