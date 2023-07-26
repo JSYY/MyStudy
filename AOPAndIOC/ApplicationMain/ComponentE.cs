@@ -33,7 +33,7 @@ namespace ApplicationMain
 
         public ComponentE()
         {
-            _timer = new Timer(state => CalculateVelocityAndRemainingTime());
+            _timer = new Timer(state => CalculateVelocityAndRemainingTimeEx());
         }
 
         public void CopyFolder(string sourcePath, string targetPath, bool deleteSourceFolder = false)
@@ -140,19 +140,25 @@ namespace ApplicationMain
         private void getDirectoryEx(string path)
         {
             getFileNameEx(path);
-            DirectoryInfo root = new DirectoryInfo(path);
-            foreach (DirectoryInfo d in root.GetDirectories())
+            if (Directory.Exists(path))
             {
-                getDirectoryEx(d.FullName);
+                DirectoryInfo root = new DirectoryInfo(path);
+                foreach (DirectoryInfo d in root.GetDirectories())
+                {
+                    getDirectoryEx(d.FullName);
+                }
             }
         }
 
         private void getFileNameEx(string path)
         {
-            DirectoryInfo root = new DirectoryInfo(path);
-            foreach (FileInfo f in root.GetFiles())
+            if (Directory.Exists(path))
             {
-                alreadyTransferDataEx += f.Length;
+                DirectoryInfo root = new DirectoryInfo(path);
+                foreach (FileInfo f in root.GetFiles())
+                {
+                    alreadyTransferDataEx += f.Length;
+                }
             }
         }
 
