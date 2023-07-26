@@ -23,6 +23,7 @@ namespace ApplicationMain
     {
         private int bufferSize = 1024*1024;
         private long alreadyTransferData = 0;
+        private long alreadyTransferDataEx = 0;
         private long totalSize = 0;
         private bool disposedValue;
         private readonly Timer _timer;
@@ -57,7 +58,9 @@ namespace ApplicationMain
                 DeleteSorrceFolder(sourcePath);
             }
         }
-
+        /// <summary>
+        /// 通过统计到的已写数据与总数据对比计算进度
+        /// </summary>
         private void CalculateVelocityAndRemainingTime()
         {
             var v = (alreadyTransferData / (1024 * 1024)) / (DateTime.Now - startTime).TotalSeconds;
@@ -69,6 +72,24 @@ namespace ApplicationMain
             }
             var percent= ((float)alreadyTransferData / (1024 * 1024) )/ ((float)totalSize / (1024 * 1024));
             Console.WriteLine("current process:"+ Math.Round(percent,2)*100+"%");
+        }
+
+        /// <summary>
+        /// 通过轮询目标文件夹下的数据大小与实际大小进行比较计算进度
+        /// </summary>
+        private void CalculateVelocityAndRemainingTimeEx()
+        {
+            alreadyTransferDataEx = 0;
+            getDirectoryEx(@"E:\target");
+            var v = (alreadyTransferDataEx / (1024 * 1024)) / (DateTime.Now - startTime).TotalSeconds;
+            Console.WriteLine("current velocity:" + Math.Round(v, 1) + "M/s");
+            if (v != 0)
+            {
+                var remainingTime = ((totalSize - alreadyTransferDataEx) / (1024 * 1024)) / v;
+                Console.WriteLine("remainingTime:" + sec_to_hms(remainingTime));
+            }
+            var percent = ((float)alreadyTransferDataEx / (1024 * 1024)) / ((float)totalSize / (1024 * 1024));
+            Console.WriteLine("current process:" + Math.Round(percent, 2) * 100 + "%");
         }
 
         private string sec_to_hms(double duration)
@@ -116,6 +137,24 @@ namespace ApplicationMain
             startTime = DateTime.Now;
             getDirectory(sourcePath);
         }
+        private void getDirectoryEx(string path)
+        {
+            getFileNameEx(path);
+            DirectoryInfo root = new DirectoryInfo(path);
+            foreach (DirectoryInfo d in root.GetDirectories())
+            {
+                getDirectoryEx(d.FullName);
+            }
+        }
+
+        private void getFileNameEx(string path)
+        {
+            DirectoryInfo root = new DirectoryInfo(path);
+            foreach (FileInfo f in root.GetFiles())
+            {
+                alreadyTransferDataEx += f.Length;
+            }
+        }
 
         private void getDirectory(string path)
         {
@@ -133,7 +172,6 @@ namespace ApplicationMain
 
         private void getFileName(string path)
         {
-           
             DirectoryInfo root = new DirectoryInfo(path);
             foreach(FileInfo f in root.GetFiles())
             {
