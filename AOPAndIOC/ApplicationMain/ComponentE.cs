@@ -39,15 +39,12 @@ namespace ApplicationMain
         {
             //开始初始化文件与文件夹相关信息
             Init(sourcePath);
-            //CreateFloder(targetPath);
             _timer.Change(0, 1000);
-            int count = 1;
             pathList.ForEach(item =>
             {
                 var path = item.Replace(sourcePath, targetPath);
-                CreateFolder(targetPath);
+                CreateFolder(path);
                 CopyFile(item, path);
-                count++;
             });
             _timer.Change(Timeout.Infinite, 0);
             if (deleteSourceFolder)
