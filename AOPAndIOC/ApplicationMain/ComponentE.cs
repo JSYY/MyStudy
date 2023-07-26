@@ -37,6 +37,11 @@ namespace ApplicationMain
 
         public void CopyFolder(string sourcePath, string targetPath, bool deleteSourceFolder = false)
         {
+            if (!Directory.Exists(sourcePath))
+            {
+                Console.WriteLine("cannot find sourcePath:{0}",new object[] { sourcePath });
+                return;
+            }
             //开始初始化文件与文件夹相关信息
             Init(sourcePath);
             _timer.Change(0, 1000);
