@@ -2,6 +2,7 @@
 using MyUnity.Attributes;
 using MyUnity.Modules;
 using MyUtil;
+using MyUtil.Logger;
 using System;
 
 namespace ApplicationMain

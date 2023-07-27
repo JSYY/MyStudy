@@ -16,18 +16,15 @@ namespace ApplicationMain
     public class ComponentA : IComponentA
     {
         private List<IConditionHandler> _conditionHandlers;
-        private IMyLogger _logger;
 
-        public ComponentA(List<IConditionHandler> conditionHandlers,IMyLogger myLogger)
+        public ComponentA(List<IConditionHandler> conditionHandlers)
         {
             _conditionHandlers = ExcuteOrderHelper.Sort<IConditionHandler>(conditionHandlers);
-            _logger = myLogger;
         }
 
         public void FunctionA()
         {
             Console.WriteLine("FunctionA Excute");
-            _logger.LogDevInformation("asdasdasdasdasdasdasd");
             _conditionHandlers.ForEach(item =>
             {
                 item.Excute();

@@ -1,4 +1,5 @@
 ﻿using MyUnity.Attributes;
+using MyUtil.Logger;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -30,10 +31,12 @@ namespace ApplicationMain
         private List<string> pathList;
         private List<string> directoryList;
         private DateTime startTime;
+        private IMyLogger _logger;
 
-        public ComponentE()
+        public ComponentE(IMyLogger logger)
         {
-            _timer = new Timer(state => CalculateVelocityAndRemainingTimeEx());
+            _logger = logger;
+            _timer = new Timer(state => CalculateVelocityAndRemainingTime());
         }
 
         public void CopyFolder(string sourcePath, string targetPath, bool deleteSourceFolder = false)
@@ -72,6 +75,7 @@ namespace ApplicationMain
             }
             var percent= ((float)alreadyTransferData / (1024 * 1024) )/ ((float)totalSize / (1024 * 1024));
             Console.WriteLine("current process:"+ Math.Round(percent,2)*100+"%");
+            _logger.LogDevInformation("current process : {0},velocity :{1}", new object[] { Math.Round(percent, 2) * 100 + "%" , Math.Round(v, 1) + "M/s" });
         }
 
         /// <summary>

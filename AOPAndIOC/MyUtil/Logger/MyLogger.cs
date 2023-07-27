@@ -9,33 +9,33 @@ namespace MyUtil.Logger
 {
     public interface IMyLogger
     {
-        void LogDevInformation(string info);
-        void LogErrorInformation(string info);
-        void LogWarningInformation(string info);
+        void LogDevInformation(string info, object[] args = null);
+        void LogErrorInformation(string info, object[] args = null);
+        void LogWarningInformation(string info, object[] args = null);
     }
     
     public class MyLogger:IMyLogger
     {
         private LoggerWrapper _loggerWrapper;
 
-        public MyLogger(string name)
+        public MyLogger()
         {
-            _loggerWrapper = new LoggerWrapper(name);
+            _loggerWrapper = new LoggerWrapper();
         }
 
-        public void LogErrorInformation(string info)
+        public void LogErrorInformation(string info,object[] args = null)
         {
-            _loggerWrapper.LogError(info);
+            _loggerWrapper.LogError(info,args);
         }
 
-        public void LogDevInformation(string info)
+        public void LogDevInformation(string info, object[] args = null)
         {
-            _loggerWrapper.LogInfo(info);
+            _loggerWrapper.LogInfo(info,args);
         }
 
-        public void LogWarningInformation(string info)
+        public void LogWarningInformation(string info, object[] args = null)
         {
-            _loggerWrapper.LogWarn(info);
+            _loggerWrapper.LogWarn(info,args);
         }
     }
 }

@@ -12,4 +12,14 @@
     <ProjectReference Include="..\MyUnity\MyUnity.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <EditorConfigFiles Remove="E:\Git\MyStudy\AOPAndIOC\MyUtil\Logger\.editorconfig" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="Logger\log4net.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
 </Project>
