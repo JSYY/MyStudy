@@ -1,0 +1,124 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+  <PropertyGroup Label="Globals">
+    <SccProjectName>SAK</SccProjectName>
+    <SccProvider>SAK</SccProvider>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccLocalPath>SAK</SccLocalPath>
+  </PropertyGroup>
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+    <EnableUnsafeBinaryFormatterSerialization>true</EnableUnsafeBinaryFormatterSerialization>
+    <AssetTargetFallback>$(AssetTargetFallback);portable-net45+win8+wp8+wpa81;</AssetTargetFallback>
+    <PreserveCompilationContext>true</PreserveCompilationContext>
+    <AssemblyName>MyServer.Web.Host</AssemblyName>
+    <OutputType>Exe</OutputType>
+    <PackageId>MyServer.Web.Host</PackageId>
+    <UserSecretsId>AbpCompanyName-MyServer-56C2EF2F-ABD6-4EFC-AAF2-2E81C34E8FB1</UserSecretsId>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <GenerateBindingRedirectsOutputType>true</GenerateBindingRedirectsOutputType>
+    <LangVersion>7.2</LangVersion>
+    <SpaRoot>ClientApp\</SpaRoot>
+    <BuildServerSideRenderer>false</BuildServerSideRenderer>
+  </PropertyGroup>
+  <ItemGroup>
+    <Content Remove="wwwroot\swagger\ui\index.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Update="Dockerfile">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="log4net.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </None>
+    <None Update="wwwroot\**\*">
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Abp.Castle.Log4Net" Version="6.0.0" />
+    <PackageReference Include="Microsoft.AspNetCore.SpaServices" Version="3.1.10" />
+    <PackageReference Include="Microsoft.AspNetCore.SpaServices.Extensions" Version="5.0.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="5.0.0">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="wwwroot\swagger\ui\index.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Remove="$(SpaRoot)dist\**" />
+    <Compile Remove="$(SpaRoot)external_libs\**" />
+    <Compile Remove="$(SpaRoot)node_modules\**" />
+    <EmbeddedResource Remove="$(SpaRoot)dist\**" />
+    <EmbeddedResource Remove="$(SpaRoot)external_libs\**" />
+    <EmbeddedResource Remove="$(SpaRoot)node_modules\**" />
+    <None Remove="$(SpaRoot)dist\**" />
+    <None Remove="$(SpaRoot)external_libs\**" />
+    <None Remove="$(SpaRoot)node_modules\**" />
+
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MyServer.Web.Core\MyServer.Web.Core.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ResolvedFileToPublish Include="D:\UIH\bin\McsfLogger.dll">
+      <RelativePath>.\McsfLogger.dll</RelativePath>
+      <CopyToPublishDirectory>Always</CopyToPublishDirectory>
+    </ResolvedFileToPublish>
+    <ResolvedFileToPublish Include="D:\UIH\bin\McsfNetBase.dll">
+      <RelativePath>.\McsfNetBase.dll</RelativePath>
+      <CopyToPublishDirectory>Always</CopyToPublishDirectory>
+    </ResolvedFileToPublish>
+    <ResolvedFileToPublish Include="D:\UIH\bin\McsfErrorHandler.dll">
+      <RelativePath>.\McsfErrorHandler.dll</RelativePath>
+      <CopyToPublishDirectory>Always</CopyToPublishDirectory>
+    </ResolvedFileToPublish>
+    <ResolvedFileToPublish Include="D:\UIH\bin\McsfErrorHandlerUtility.dll">
+      <RelativePath>.\McsfErrorHandlerUtility.dll</RelativePath>
+      <CopyToPublishDirectory>Always</CopyToPublishDirectory>
+    </ResolvedFileToPublish>
+    <ResolvedFileToPublish Include="D:\UIH\bin\McsfErrorHandlerEnv.dll">
+      <RelativePath>.\McsfErrorHandlerEnv.dll</RelativePath>
+      <CopyToPublishDirectory>Always</CopyToPublishDirectory>
+    </ResolvedFileToPublish>
+    <ResolvedFileToPublish Include="D:\UIH\bin\McsfErrorHandlerSysKey.dll">
+      <RelativePath>.\McsfErrorHandlerSysKey.dll</RelativePath>
+      <CopyToPublishDirectory>Always</CopyToPublishDirectory>
+    </ResolvedFileToPublish>
+    <ResolvedFileToPublish Include="D:\UIH\bin\McsfSystemEnvironmentConfig.dll">
+      <RelativePath>.\McsfSystemEnvironmentConfig.dll</RelativePath>
+      <CopyToPublishDirectory>Always</CopyToPublishDirectory>
+    </ResolvedFileToPublish>
+    <ResolvedFileToPublish Include="D:\UIH\bin\xerces-c_3_2.dll">
+      <RelativePath>.\xerces-c_3_2.dll</RelativePath>
+      <CopyToPublishDirectory>Always</CopyToPublishDirectory>
+    </ResolvedFileToPublish>
+    <ResolvedFileToPublish Include="D:\UIH\bin\McsfFileParser.dll">
+      <RelativePath>.\McsfFileParser.dll</RelativePath>
+      <CopyToPublishDirectory>Always</CopyToPublishDirectory>
+    </ResolvedFileToPublish>
+  </ItemGroup>
+  <Target Name="PublishRunWebpack" AfterTargets="ComputeFilesToPublish">
+    <!-- As part of publishing, ensure the JS resources are freshly built in production mode -->
+    <!--<Exec WorkingDirectory="$(SpaRoot)" Command="npm install" />
+    <Exec WorkingDirectory="$(SpaRoot)" Command="npm run build" />-->
+    <!-- Include the newly-built files in the publish output -->
+    <ItemGroup>
+      <DistFiles Include="$(SpaRoot)dist\**; $(SpaRoot)dist-server\**" />
+      <DistFiles Include="$(SpaRoot)node_modules\**" Condition="'$(BuildServerSideRenderer)' == 'true'" />
+      <ResolvedFileToPublish Include="@(DistFiles->'%(FullPath)')" Exclude="@(ResolvedFileToPublish)">
+        <RelativePath>%(DistFiles.Identity)</RelativePath>
+        <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      </ResolvedFileToPublish>
+    </ItemGroup>
+  </Target>
+  <ProjectExtensions><VisualStudio><UserProperties appsettings_1json__JsonSchema="" /></VisualStudio></ProjectExtensions>
+  <PropertyGroup>
+    <PublishWithAspNetCoreTargetManifest>false</PublishWithAspNetCoreTargetManifest>
+  </PropertyGroup>
+</Project>
