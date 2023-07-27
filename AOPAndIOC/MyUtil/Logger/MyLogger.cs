@@ -18,9 +18,9 @@ namespace MyUtil.Logger
     {
         private LoggerWrapper _loggerWrapper;
 
-        public MyLogger()
+        public MyLogger(string name)
         {
-            _loggerWrapper = new LoggerWrapper();
+            _loggerWrapper = new LoggerWrapper(name);
         }
 
         public void LogErrorInformation(string info,object[] args = null)

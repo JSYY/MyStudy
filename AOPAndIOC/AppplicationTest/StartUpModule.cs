@@ -23,7 +23,7 @@ namespace AppplicationTest
 
         public override void PreInitialize()
         {
-            _applicationContext.RegisterInstance<IMyLogger>(new MyLogger());
+            _applicationContext.RegisterInstance<IMyLogger>(new MyLogger("MyUnityTest"));
         }
     }
 }

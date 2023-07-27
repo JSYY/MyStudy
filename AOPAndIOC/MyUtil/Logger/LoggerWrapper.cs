@@ -14,10 +14,10 @@ namespace MyUtil.Logger
     {
         private ILog _log;
 
-        public LoggerWrapper()
+        public LoggerWrapper(string name)
         {
             XmlConfigurator.ConfigureAndWatch(new FileInfo(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Logger\\log4net.config")));
-            _log = LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+            _log = LogManager.GetLogger(name);
         }
 
         public void LogError(string message,object[] args=null)
