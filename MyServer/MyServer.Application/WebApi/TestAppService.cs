@@ -17,8 +17,9 @@ namespace BEServerProxy.WebApi.MainFrame
 
         [HttpGet]
         [DontWrapResult]
-        public void Test()
+        public void TestMethod()
         {
+            //前端Api  api/services/app/Test/TestMethod
             Console.WriteLine("Test");
         }
     }
