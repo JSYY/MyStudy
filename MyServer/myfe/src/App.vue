@@ -1,21 +1,31 @@
 <template>
   <div class="main">
     <button @click="sendTo">test api send to server</button>
+    <button @click="addDialog">add dialog</button>
   </div>
 </template>
 
 <script lang="ts">
-import {HttpServices} from "./services/http-wrapper.service"
+import {HttpServices} from "./services/http-wrapper.service";
+import { DialogServices } from "./utils/dialog.service";
 import * as signalR from '@microsoft/signalr';
-import { onMounted } from 'vue';
+import HelloWorld from "./components/HelloWorld.vue";
+import { getCurrentInstance, onMounted } from 'vue';
 
 export default{
     setup(props:any) {
       let connection: signalR.HubConnection;
-
+      let ins = getCurrentInstance();
+      let count=0;
+      
       onMounted(()=>{
         startSignalrConnection();
       });
+
+      function addDialog(){
+        DialogServices.AddDialogComponent(ins,HelloWorld,{message:count.toString()});
+        count++;
+      }
 
       function sendTo(){
         const url = 'api/services/app/Test/TestMethod';
@@ -31,7 +41,7 @@ export default{
       }
 
       return{
-        sendTo,
+        sendTo,addDialog
       }
     },
 }
