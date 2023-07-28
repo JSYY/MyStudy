@@ -5,14 +5,29 @@
 </template>
 
 <script lang="ts">
-import {HttpServices} from "../src/http-wrapper.service"
+import {HttpServices} from "./services/http-wrapper.service"
+import * as signalR from '@microsoft/signalr';
+import { onMounted } from 'vue';
 
 export default{
     setup(props:any) {
-      
+      let connection: signalR.HubConnection;
+
+      onMounted(()=>{
+        startSignalrConnection();
+      });
+
       function sendTo(){
         const url = 'api/services/app/Test/TestMethod';
         HttpServices.get(url);
+      }
+
+      function startSignalrConnection(){
+        connection = new signalR.HubConnectionBuilder().withUrl('/webconsolehub').build();
+        connection.start();
+        connection.on("TestMessage",()=>{
+          console.log("receive signalr message");
+        });
       }
 
       return{
