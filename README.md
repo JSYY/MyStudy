@@ -1,8 +1,6 @@
-# MyStudy  
-![ec3104adef04919e74763dd8be0c3460](https://github.com/JSYY/MyStudy/assets/32703265/ac20f836-d4e7-412c-8e20-06f68d8f7990)
-🌈不积跬步，无以至千里  
-🌈不积小流，无以成江海  
-          
+# MyStudy 
+✨🌈📦⚙️🌍🎨🔨❤️⭐
+
 ## 🔨待办事项      
 1.多线程总结(持续)    
 2.electron研究   
@@ -65,5 +63,4 @@ FFmpeg推流，然后websocket开启端口再将流展示到html网页，使用�
 2.基于unity的Aop和IOC框架，实现切面和类的注入管理  
 3.webpack打包发布  
 4.六大设计原则整理  
-✨🌈📦⚙️🌍🎨🔨❤️⭐
 
