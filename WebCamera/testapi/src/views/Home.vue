@@ -10,7 +10,7 @@
 
 <script lang="js">
     import { onMounted, onUnmounted, ref } from "@vue/runtime-core";
-    import JSMpeg from './jsmpeg.min.js';
+    import JSMpeg from '../components/jsmpeg.min.js';
 export default {
   setup() {
         let flag = ref(false);

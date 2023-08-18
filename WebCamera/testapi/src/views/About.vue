@@ -21,7 +21,7 @@
             });
 
             function openCamera(){
-                navigator.mediaDevices.getUserMedia({ audio: false,video: {width:1200,height:900} }).then((res:MediaStream)=>{
+                navigator.mediaDevices.getUserMedia({ audio: false,video: {width:800,height:800} }).then((res:MediaStream)=>{
                 const videoEle = document.querySelector('video');
                 mediaStream=res;
                 if(videoEle){
