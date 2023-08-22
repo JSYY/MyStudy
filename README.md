@@ -6,10 +6,8 @@
 2.electron研究-vue与electron进行通信   
 3.数据库通知封装实现    
 4.C++学习(持续)  
-5.服务端封装设计(持续)  
-6.WebRtc技术  
-7.leetcode-左程云   
-8.多线程CancellationTokenSource
+5.服务端封装设计(持续)   
+6.leetcode-左程云
 
 ## 📦已有项目
 1.基于Unity的AOP/IOC框架/C#一些语法知识的Demo实现  
@@ -18,7 +16,7 @@
 4.Grpc实践  
 5.vue组件化  
 6.基于hammerjs的web图形绘制实践  
-7.web摄像头推流  
+7.web摄像头推流(1.ffmpeg+jsmpeg+websocket方式 2.webRTC)   
 8.webpack入门实践   
 9.socket通信  
 10.IO流实现文件夹拷贝时的进度以及速度剩余时间计算(隶属项目：AOPAndIOC)  
