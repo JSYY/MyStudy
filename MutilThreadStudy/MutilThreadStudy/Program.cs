@@ -25,7 +25,7 @@ namespace MutilThreadStudy
             //resetEvent.SetFalse();
             //Thread.Sleep(10000);
             //resetEvent.SetTrue();
-            
+
             //-----------------------------------------------------------
             //AutoResetEvent与ManualResetEvent的区别在于AutoResetEvent会在对信号设置为一次True后自动地重置为false，而Manual不会
             //AutoResetEventTest autoResetEventTest = new AutoResetEventTest();
@@ -40,10 +40,16 @@ namespace MutilThreadStudy
             //Thread.Sleep(2000);
             //autoResetEventTest.SetTrue();
 
-            SemaphoreTest semaphoreTest = new SemaphoreTest();
-            semaphoreTest.Run();
+            //SemaphoreTest semaphoreTest = new SemaphoreTest();
+            //semaphoreTest.Run();
+            //Thread.Sleep(5000);
+            //semaphoreTest.Set(2);
+
+            ThreadCancelTest cancelTest = new ThreadCancelTest();
+            cancelTest.ExcuetJob();
+
             Thread.Sleep(5000);
-            semaphoreTest.Set(2);
+            cancelTest.cancelJob();
 
             Console.ReadKey();
         }
