@@ -16,7 +16,7 @@
 4.Grpc实践  
 5.vue组件化  
 6.基于hammerjs的web图形绘制实践  
-7.web摄像头推流  
+7.web摄像头推流(1.ffmpeg+jsmpeg+websocket方式 2.webRTC)   
 8.webpack入门实践   
 9.socket通信  
 10.IO流实现文件夹拷贝时的进度以及速度剩余时间计算(隶属项目：AOPAndIOC)  
