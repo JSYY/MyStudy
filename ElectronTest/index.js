@@ -3,7 +3,7 @@
 //app 模块，控制整个应用程序的事件生命周期。
 //BrowserWindow 模块，它创建和管理程序的窗口。
 
-const { app, BrowserWindow } = require('electron')
+const { app, BrowserWindow,ipcMain } = require('electron')
 const path = require('path')
 
 const createWindow = () => {
@@ -22,6 +22,12 @@ const createWindow = () => {
             preload: path.join(__dirname, 'preload.js')
         }
     });
+
+    ipcMain.on('set-title', (event, title) => {
+        const webContents = event.sender;
+        const win = BrowserWindow.fromWebContents(webContents);
+        win.setTitle(title);
+    })
 
     //窗口loadURL或者加载html
     //mainWindow.loadURL('http://localhost:8080');
@@ -59,3 +65,8 @@ app.on('ready', async () => {
 app.on('window-all-closed', () => {
     if (process.platform !== 'darwin') app.quit()
 })
+
+ipcMain.on('message', (e, data) => {
+    console.log('data:', data);
+    e.sender.send('return', 'receive message return!');
+});

@@ -18,10 +18,10 @@
   "build": {
     "appId": "12345",
     "copyright": "@jsyy",
-    "productName": "MyElectron", 
+    "productName": "MyElectron",
     "win": {
       "target": [
-        "portable" 
+        "portable"
       ]
     }
   }
