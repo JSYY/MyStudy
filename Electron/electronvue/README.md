@@ -29,3 +29,4 @@ pluginOptions: {
             nodeIntegration: true
         }
     },
+4.node°æ±¾14.16.1
