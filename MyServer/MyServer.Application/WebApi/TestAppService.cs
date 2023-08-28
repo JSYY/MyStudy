@@ -9,10 +9,11 @@ namespace BEServerProxy.WebApi.MainFrame
 {
     public class TestAppService : MyServerAppServiceBase
     {
+        private readonly ServiceReturnToWeb _serviceReturn;
 
-        public TestAppService()
+        public TestAppService(ServiceReturnToWeb serviceReturn)
         {
-
+            _serviceReturn = serviceReturn;
         }
 
         [HttpGet]
@@ -21,6 +22,7 @@ namespace BEServerProxy.WebApi.MainFrame
         {
             //前端Api  api/services/app/Test/TestMethod
             Console.WriteLine("Test");
+            _serviceReturn.notifyData();
         }
     }
 }

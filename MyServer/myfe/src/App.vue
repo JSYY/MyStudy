@@ -35,8 +35,8 @@ export default{
       function startSignalrConnection(){
         connection = new signalR.HubConnectionBuilder().withUrl('/webconsolehub').build();
         connection.start();
-        connection.on("TestMessage",()=>{
-          console.log("receive signalr message");
+        connection.on("TestMessage",(res)=>{
+          console.log("receive signalr message"+res);
         });
       }
 

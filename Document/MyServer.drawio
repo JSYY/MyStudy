@@ -1,50 +1,81 @@
-<mxfile host="app.diagrams.net" modified="2023-07-28T02:37:43.080Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36 Edg/115.0.1901.183" etag="Ll618UXjBRRwSPGIYTEN" version="21.6.2" type="device">
+<mxfile host="app.diagrams.net" modified="2023-08-28T01:57:04.344Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/116.0.0.0 Safari/537.36 Edg/116.0.1938.54" etag="dskDemKTjJ71Aj4fg-Tl" version="21.6.8" type="device">
   <diagram name="第 1 页" id="WHywGJLIP8ct8R0bjwMU">
     <mxGraphModel dx="1434" dy="764" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
-        <mxCell id="7_GKt7siSIdoluKyupy0-9" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="7_GKt7siSIdoluKyupy0-1" target="7_GKt7siSIdoluKyupy0-2">
+        <mxCell id="7_GKt7siSIdoluKyupy0-9" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="7_GKt7siSIdoluKyupy0-1" target="7_GKt7siSIdoluKyupy0-2" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="7_GKt7siSIdoluKyupy0-1" value="MyServer.Web.Host" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+        <mxCell id="7_GKt7siSIdoluKyupy0-1" value="MyServer.Web.Host" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" parent="1" vertex="1">
           <mxGeometry x="188" y="260" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="7_GKt7siSIdoluKyupy0-10" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="7_GKt7siSIdoluKyupy0-2" target="7_GKt7siSIdoluKyupy0-4">
+        <mxCell id="7_GKt7siSIdoluKyupy0-10" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="7_GKt7siSIdoluKyupy0-2" target="7_GKt7siSIdoluKyupy0-4" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="7_GKt7siSIdoluKyupy0-2" value="MyServer.Web.Core" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="7_GKt7siSIdoluKyupy0-2" value="MyServer.Web.Core" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="188" y="360" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="7_GKt7siSIdoluKyupy0-16" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="7_GKt7siSIdoluKyupy0-3" target="7_GKt7siSIdoluKyupy0-15">
+        <mxCell id="7_GKt7siSIdoluKyupy0-16" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="7_GKt7siSIdoluKyupy0-3" target="7_GKt7siSIdoluKyupy0-15" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="7_GKt7siSIdoluKyupy0-3" value="MyServer.Core" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+        <mxCell id="7_GKt7siSIdoluKyupy0-3" value="MyServer.Core" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" vertex="1">
           <mxGeometry x="188" y="550" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="7_GKt7siSIdoluKyupy0-11" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="7_GKt7siSIdoluKyupy0-4" target="7_GKt7siSIdoluKyupy0-3">
+        <mxCell id="7_GKt7siSIdoluKyupy0-11" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="7_GKt7siSIdoluKyupy0-4" target="7_GKt7siSIdoluKyupy0-3" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="7_GKt7siSIdoluKyupy0-4" value="MyServer.Application" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+        <mxCell id="7_GKt7siSIdoluKyupy0-4" value="MyServer.Application" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" vertex="1">
           <mxGeometry x="188" y="460" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="7_GKt7siSIdoluKyupy0-5" value="MyServer.&lt;br&gt;DataModel" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="1">
+        <mxCell id="7_GKt7siSIdoluKyupy0-5" value="MyServer.&lt;br&gt;DataModel" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" parent="1" vertex="1">
           <mxGeometry x="314" y="260" width="100" height="440" as="geometry" />
         </mxCell>
-        <mxCell id="7_GKt7siSIdoluKyupy0-7" value="&lt;h1&gt;MyServer介绍&lt;/h1&gt;&lt;p&gt;1.MyServer.Web.Host:：.Net Core的服务启动入口，用于配置中间件等插件&lt;br&gt;&lt;/p&gt;&lt;p&gt;2.MyServer.Application：服务端API入口以及SignalR消息转发出口&lt;/p&gt;&lt;p&gt;3.MyServer.Core：服务端主要业务承载处&lt;/p&gt;&lt;p&gt;4.MyServer.Web.Core：N/A&lt;/p&gt;&lt;p&gt;5.MyServer.DataModel：实体类，实体缓存层&lt;/p&gt;&lt;p&gt;6.待增设，数据库操作层&lt;/p&gt;" style="text;html=1;strokeColor=none;fillColor=none;spacing=5;spacingTop=-20;whiteSpace=wrap;overflow=hidden;rounded=0;" vertex="1" parent="1">
+        <mxCell id="7_GKt7siSIdoluKyupy0-7" value="&lt;h1&gt;MyServer介绍&lt;/h1&gt;&lt;p&gt;1.MyServer.Web.Host:：.Net Core的服务启动入口，用于配置中间件等插件&lt;br&gt;&lt;/p&gt;&lt;p&gt;2.MyServer.Application：服务端API入口以及SignalR消息转发出口&lt;/p&gt;&lt;p&gt;3.MyServer.Core：服务端主要业务承载处&lt;/p&gt;&lt;p&gt;4.MyServer.Web.Core：N/A&lt;/p&gt;&lt;p&gt;5.MyServer.DataModel：实体类，实体缓存层&lt;/p&gt;&lt;p&gt;6.待增设，数据库操作层&lt;/p&gt;" style="text;html=1;strokeColor=none;fillColor=none;spacing=5;spacingTop=-20;whiteSpace=wrap;overflow=hidden;rounded=0;" parent="1" vertex="1">
           <mxGeometry x="20" y="10" width="540" height="270" as="geometry" />
         </mxCell>
-        <mxCell id="7_GKt7siSIdoluKyupy0-12" value="Logger" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1">
+        <mxCell id="7_GKt7siSIdoluKyupy0-12" value="Logger" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" parent="1" vertex="1">
           <mxGeometry x="118" y="260" width="60" height="440" as="geometry" />
         </mxCell>
-        <mxCell id="7_GKt7siSIdoluKyupy0-13" value="MyUnity" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1">
+        <mxCell id="7_GKt7siSIdoluKyupy0-13" value="MyUnity" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" parent="1" vertex="1">
           <mxGeometry x="44" y="260" width="60" height="440" as="geometry" />
         </mxCell>
-        <mxCell id="7_GKt7siSIdoluKyupy0-15" value="MyServer.DataBase" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="7_GKt7siSIdoluKyupy0-15" value="MyServer.DataBase" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="188" y="640" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="7_GKt7siSIdoluKyupy0-17" value="DataBase" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="7_GKt7siSIdoluKyupy0-17" value="DataBase" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="44" y="710" width="366" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="UTcWQ5uGvkD-MmiusDsS-4" value="http" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="UTcWQ5uGvkD-MmiusDsS-1" target="UTcWQ5uGvkD-MmiusDsS-2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="UTcWQ5uGvkD-MmiusDsS-1" value="FE" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="560" y="335" width="90" height="145" as="geometry" />
+        </mxCell>
+        <mxCell id="UTcWQ5uGvkD-MmiusDsS-3" value="Singlar" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.25;exitDx=0;exitDy=0;entryX=1.011;entryY=0.331;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="UTcWQ5uGvkD-MmiusDsS-2" target="UTcWQ5uGvkD-MmiusDsS-1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="UTcWQ5uGvkD-MmiusDsS-6" value="service" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="UTcWQ5uGvkD-MmiusDsS-2" target="UTcWQ5uGvkD-MmiusDsS-5">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="UTcWQ5uGvkD-MmiusDsS-2" value="MyServer.Application" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="800" y="360" width="180" height="95" as="geometry" />
+        </mxCell>
+        <mxCell id="UTcWQ5uGvkD-MmiusDsS-7" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.561;entryY=-0.032;entryDx=0;entryDy=0;entryPerimeter=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;" edge="1" parent="1" source="UTcWQ5uGvkD-MmiusDsS-5" target="UTcWQ5uGvkD-MmiusDsS-2">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="910" y="287.5" as="targetPoint" />
+            <mxPoint x="1090" y="335" as="sourcePoint" />
+            <Array as="points">
+              <mxPoint x="1160" y="340" />
+              <mxPoint x="901" y="340" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="UTcWQ5uGvkD-MmiusDsS-5" value="MyServer.Core" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="1070" y="360" width="180" height="95" as="geometry" />
+        </mxCell>
+        <mxCell id="UTcWQ5uGvkD-MmiusDsS-8" value="推送的消息使用委托代理到Application层利用该层singlr推到前端" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="860" y="310" width="360" height="30" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>

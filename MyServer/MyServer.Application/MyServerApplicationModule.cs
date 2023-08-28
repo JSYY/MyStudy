@@ -19,7 +19,7 @@ namespace MyServer
         {
             var thisAssembly = typeof(MyServerApplicationModule).GetAssembly();
             IocManager.RegisterAssemblyByConvention(thisAssembly);
-            IocManager.Register<IEventSender, ExamEventSender>();
+            IocManager.Register<EventSender>();
             Configuration.Modules.AbpAutoMapper().Configurators.Add(
                 // Scan the assembly for classes which inherit from AutoMapper.Profile
                 cfg => cfg.AddMaps(thisAssembly)
@@ -29,7 +29,7 @@ namespace MyServer
         public override void PostInitialize()
         {
             base.PostInitialize();
-            IocManager.Resolve<ExamEventSender>();
+            IocManager.Resolve<EventSender>();
         }
     }
 }

@@ -21,12 +21,13 @@ namespace MyServer
         public override void Initialize()
         {
             IocManager.RegisterAssemblyByConvention(typeof(MyServerCoreModule).GetAssembly());
-    
+            IocManager.Register<ServiceReturnToWeb>();
         }
 
         public override void PostInitialize()
         {
             IocManager.Resolve<AppTimes>().StartupTime = Clock.Now;
+            IocManager.Resolve<ServiceReturnToWeb>();
         }
     }
 }

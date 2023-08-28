@@ -7,30 +7,22 @@ using System.Threading;
 
 namespace MyServer.EventToWeb
 {
-    public class ExamEventSender : EventSenderBase, IShouldInitialize,IDisposable
+    public class EventSender : IDisposable
     {
-        private Timer _timer; 
+        private Timer _timer;
+        protected readonly WebConsoleHub _hub;
+        private readonly ServiceReturnToWeb _serviceReturn;
 
-        public ExamEventSender(WebConsoleHub hub)
-            : base(hub)
+        public EventSender(WebConsoleHub hub,ServiceReturnToWeb serviceReturn)
         {
-            _timer = new Timer(state => TestHandler());
-            _timer.Change(0, 2000);
+            _hub = hub;
+            _serviceReturn = serviceReturn;
+            _serviceReturn.OnDataChanged += TestHandler;
         }
 
-        public void Initialize()
+        private void TestHandler(object sender, MyEventArgs e)
         {
-            TryRegisterEventImpl();
-        }
-       
-        protected override void TryRegisterEventImpl()
-        {
-            base.TryRegisterEventImpl();
-        }
-
-        private void TestHandler()
-        {
-            _ = _hub.SendMessage("TestMessage", string.Empty);
+            _ = _hub.SendMessage("TestMessage", e.name);
         }
 
         public void Dispose()
