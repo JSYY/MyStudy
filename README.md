@@ -24,6 +24,7 @@
 11.第三方日志log4net封装集成(隶属项目：AOPAndIOC)  
 12.基于abp框架的服务端demo，集成log4net、signalr、MyUnity  
 13.web通过修改dom树弹框挂载组件Demo(隶属项目：MyServer前端)  
+14.Echarts-Demo(隶属项目vue-component)
 
 ---------------------------------------------------
 # ✨更新
