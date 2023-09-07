@@ -5,3 +5,12 @@
 display:inline 转为行内元素  
 display:block 转为块级元素  
 display:inline-block 转为行内块级元素  
+
+## line-height与height的区别  
+height指的就是元素的高度  
+line-height指的是元素中每一行文字的高度，只要换行整个盒子模型的高度就会被撑大  
+
+## css优先级比较  
+!importment>内联样式>id>class>标签>通配  
+
+
