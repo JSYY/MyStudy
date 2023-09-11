@@ -10,7 +10,7 @@
 6.leetcode-左程云  
 7.解决dialog挂载组件会导致内存泄漏的问题
 
-## 📦已有项目
+## 📦已有实践
 1.基于Unity的AOP/IOC框架/C#一些语法知识的Demo实现  
 2.设计原则/代码实践  
 3.Electron     
