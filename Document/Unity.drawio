@@ -1,97 +1,103 @@
-<mxfile host="app.diagrams.net" modified="2023-04-10T08:20:27.972Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36 Edg/112.0.1722.34" etag="86-6a53C_D_k8PqzyEs2" version="21.1.5" type="device">
+<mxfile host="app.diagrams.net" modified="2023-09-26T06:39:41.725Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/117.0.0.0 Safari/537.36 Edg/117.0.2045.36" etag="EfxzDDVG2Y2vuli9vCn-" version="21.7.5" type="device">
   <diagram name="第 1 页" id="mU1mpMe11M9h-CnKYhcq">
     <mxGraphModel dx="1195" dy="637" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
-        <mxCell id="NJD7KRaixhtoixWHFcWI-23" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="NJD7KRaixhtoixWHFcWI-1" target="NJD7KRaixhtoixWHFcWI-2">
+        <mxCell id="NJD7KRaixhtoixWHFcWI-23" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" source="NJD7KRaixhtoixWHFcWI-1" target="NJD7KRaixhtoixWHFcWI-2" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="NJD7KRaixhtoixWHFcWI-1" value="UnityApplication初始化" style="strokeWidth=2;html=1;shape=mxgraph.flowchart.start_1;whiteSpace=wrap;" vertex="1" parent="1">
+        <mxCell id="NJD7KRaixhtoixWHFcWI-1" value="UnityApplication初始化" style="strokeWidth=2;html=1;shape=mxgraph.flowchart.start_1;whiteSpace=wrap;" parent="1" vertex="1">
           <mxGeometry x="100" y="20" width="100" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="NJD7KRaixhtoixWHFcWI-24" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="NJD7KRaixhtoixWHFcWI-2" target="NJD7KRaixhtoixWHFcWI-12">
+        <mxCell id="NJD7KRaixhtoixWHFcWI-24" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" source="NJD7KRaixhtoixWHFcWI-2" target="NJD7KRaixhtoixWHFcWI-12" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="NJD7KRaixhtoixWHFcWI-2" value="创建UnityApplicationContext" style="strokeWidth=2;html=1;shape=mxgraph.flowchart.terminator;whiteSpace=wrap;" vertex="1" parent="1">
+        <mxCell id="NJD7KRaixhtoixWHFcWI-2" value="创建UnityApplicationContext" style="strokeWidth=2;html=1;shape=mxgraph.flowchart.terminator;whiteSpace=wrap;" parent="1" vertex="1">
           <mxGeometry x="65" y="170" width="170" height="40" as="geometry" />
         </mxCell>
-        <mxCell id="NJD7KRaixhtoixWHFcWI-3" value="创建Unity容器并注册UnityContainer" style="rounded=1;whiteSpace=wrap;html=1;absoluteArcSize=1;arcSize=14;strokeWidth=2;" vertex="1" parent="1">
+        <mxCell id="2d4f1SDmP9TJ_iNMOetL-1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="NJD7KRaixhtoixWHFcWI-3" target="NJD7KRaixhtoixWHFcWI-9">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="NJD7KRaixhtoixWHFcWI-3" value="创建Unity容器并注册UnityContainer" style="rounded=1;whiteSpace=wrap;html=1;absoluteArcSize=1;arcSize=14;strokeWidth=2;" parent="1" vertex="1">
           <mxGeometry x="280" y="80" width="120" height="50" as="geometry" />
         </mxCell>
-        <mxCell id="NJD7KRaixhtoixWHFcWI-4" value="创建UnityConfiguration配置类并注册" style="rounded=1;whiteSpace=wrap;html=1;absoluteArcSize=1;arcSize=14;strokeWidth=2;" vertex="1" parent="1">
-          <mxGeometry x="280" y="160" width="120" height="60" as="geometry" />
+        <mxCell id="NJD7KRaixhtoixWHFcWI-4" value="创建UnityConfiguration配置类并注册" style="rounded=1;whiteSpace=wrap;html=1;absoluteArcSize=1;arcSize=14;strokeWidth=2;" parent="1" vertex="1">
+          <mxGeometry x="280" y="250" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="NJD7KRaixhtoixWHFcWI-5" value="" style="shape=curlyBracket;whiteSpace=wrap;html=1;rounded=1;labelPosition=left;verticalLabelPosition=middle;align=right;verticalAlign=middle;" vertex="1" parent="1">
-          <mxGeometry x="400" y="150" width="20" height="80" as="geometry" />
+        <mxCell id="NJD7KRaixhtoixWHFcWI-5" value="" style="shape=curlyBracket;whiteSpace=wrap;html=1;rounded=1;labelPosition=left;verticalLabelPosition=middle;align=right;verticalAlign=middle;" parent="1" vertex="1">
+          <mxGeometry x="400" y="240" width="20" height="80" as="geometry" />
         </mxCell>
-        <mxCell id="NJD7KRaixhtoixWHFcWI-6" value="Components" style="strokeWidth=2;html=1;shape=mxgraph.flowchart.stored_data;whiteSpace=wrap;" vertex="1" parent="1">
-          <mxGeometry x="440" y="150" width="80" height="30" as="geometry" />
+        <mxCell id="NJD7KRaixhtoixWHFcWI-6" value="Components" style="strokeWidth=2;html=1;shape=mxgraph.flowchart.stored_data;whiteSpace=wrap;" parent="1" vertex="1">
+          <mxGeometry x="440" y="240" width="80" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="NJD7KRaixhtoixWHFcWI-8" value="Aspects" style="strokeWidth=2;html=1;shape=mxgraph.flowchart.stored_data;whiteSpace=wrap;" vertex="1" parent="1">
-          <mxGeometry x="440" y="200" width="80" height="30" as="geometry" />
+        <mxCell id="NJD7KRaixhtoixWHFcWI-8" value="Aspects" style="strokeWidth=2;html=1;shape=mxgraph.flowchart.stored_data;whiteSpace=wrap;" parent="1" vertex="1">
+          <mxGeometry x="440" y="290" width="80" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="NJD7KRaixhtoixWHFcWI-9" value="配置Container的Interception" style="rounded=1;whiteSpace=wrap;html=1;absoluteArcSize=1;arcSize=14;strokeWidth=2;" vertex="1" parent="1">
-          <mxGeometry x="280" y="250" width="120" height="50" as="geometry" />
+        <mxCell id="2d4f1SDmP9TJ_iNMOetL-2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="NJD7KRaixhtoixWHFcWI-9" target="NJD7KRaixhtoixWHFcWI-4">
+          <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="NJD7KRaixhtoixWHFcWI-11" value="" style="shape=curlyBracket;whiteSpace=wrap;html=1;rounded=1;labelPosition=left;verticalLabelPosition=middle;align=right;verticalAlign=middle;" vertex="1" parent="1">
+        <mxCell id="NJD7KRaixhtoixWHFcWI-9" value="配置Container的Interception" style="rounded=1;whiteSpace=wrap;html=1;absoluteArcSize=1;arcSize=14;strokeWidth=2;" parent="1" vertex="1">
+          <mxGeometry x="280" y="165" width="120" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="NJD7KRaixhtoixWHFcWI-11" value="" style="shape=curlyBracket;whiteSpace=wrap;html=1;rounded=1;labelPosition=left;verticalLabelPosition=middle;align=right;verticalAlign=middle;" parent="1" vertex="1">
           <mxGeometry x="240" y="80" width="20" height="220" as="geometry" />
         </mxCell>
-        <mxCell id="NJD7KRaixhtoixWHFcWI-25" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="NJD7KRaixhtoixWHFcWI-12" target="NJD7KRaixhtoixWHFcWI-13">
+        <mxCell id="NJD7KRaixhtoixWHFcWI-25" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="NJD7KRaixhtoixWHFcWI-12" target="NJD7KRaixhtoixWHFcWI-13" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="NJD7KRaixhtoixWHFcWI-12" value="注册UnityApplication" style="strokeWidth=2;html=1;shape=mxgraph.flowchart.start_1;whiteSpace=wrap;" vertex="1" parent="1">
+        <mxCell id="NJD7KRaixhtoixWHFcWI-12" value="注册UnityApplication" style="strokeWidth=2;html=1;shape=mxgraph.flowchart.start_1;whiteSpace=wrap;" parent="1" vertex="1">
           <mxGeometry x="100" y="300" width="100" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="NJD7KRaixhtoixWHFcWI-26" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="NJD7KRaixhtoixWHFcWI-13" target="NJD7KRaixhtoixWHFcWI-14">
+        <mxCell id="NJD7KRaixhtoixWHFcWI-26" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="NJD7KRaixhtoixWHFcWI-13" target="NJD7KRaixhtoixWHFcWI-14" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="NJD7KRaixhtoixWHFcWI-13" value="Initialize" style="rounded=1;whiteSpace=wrap;html=1;absoluteArcSize=1;arcSize=14;strokeWidth=2;" vertex="1" parent="1">
+        <mxCell id="NJD7KRaixhtoixWHFcWI-13" value="Initialize" style="rounded=1;whiteSpace=wrap;html=1;absoluteArcSize=1;arcSize=14;strokeWidth=2;" parent="1" vertex="1">
           <mxGeometry x="100" y="410" width="100" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="NJD7KRaixhtoixWHFcWI-27" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="NJD7KRaixhtoixWHFcWI-14" target="NJD7KRaixhtoixWHFcWI-15">
+        <mxCell id="NJD7KRaixhtoixWHFcWI-27" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="NJD7KRaixhtoixWHFcWI-14" target="NJD7KRaixhtoixWHFcWI-15" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="NJD7KRaixhtoixWHFcWI-28" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="NJD7KRaixhtoixWHFcWI-14" target="NJD7KRaixhtoixWHFcWI-16">
+        <mxCell id="NJD7KRaixhtoixWHFcWI-28" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="NJD7KRaixhtoixWHFcWI-14" target="NJD7KRaixhtoixWHFcWI-16" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="NJD7KRaixhtoixWHFcWI-14" value="通过DependsOn的特性解析出所有Module并添加到DependTree的数据结构中" style="rounded=1;whiteSpace=wrap;html=1;absoluteArcSize=1;arcSize=14;strokeWidth=2;" vertex="1" parent="1">
+        <mxCell id="NJD7KRaixhtoixWHFcWI-14" value="通过DependsOn的特性解析出所有Module并添加到DependTree的数据结构中" style="rounded=1;whiteSpace=wrap;html=1;absoluteArcSize=1;arcSize=14;strokeWidth=2;" parent="1" vertex="1">
           <mxGeometry x="259" y="385" width="146" height="80" as="geometry" />
         </mxCell>
-        <mxCell id="NJD7KRaixhtoixWHFcWI-15" value="对依赖树中的Modile按照依赖顺序进行排序" style="rounded=1;whiteSpace=wrap;html=1;absoluteArcSize=1;arcSize=14;strokeWidth=2;" vertex="1" parent="1">
+        <mxCell id="NJD7KRaixhtoixWHFcWI-15" value="对依赖树中的Modile按照依赖顺序进行排序" style="rounded=1;whiteSpace=wrap;html=1;absoluteArcSize=1;arcSize=14;strokeWidth=2;" parent="1" vertex="1">
           <mxGeometry x="450" y="402.5" width="140" height="45" as="geometry" />
         </mxCell>
-        <mxCell id="NJD7KRaixhtoixWHFcWI-29" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="NJD7KRaixhtoixWHFcWI-16" target="NJD7KRaixhtoixWHFcWI-17">
+        <mxCell id="NJD7KRaixhtoixWHFcWI-29" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" source="NJD7KRaixhtoixWHFcWI-16" target="NJD7KRaixhtoixWHFcWI-17" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="NJD7KRaixhtoixWHFcWI-16" value="从依赖树中取出这些Module并实例化(单例)" style="rounded=1;whiteSpace=wrap;html=1;absoluteArcSize=1;arcSize=14;strokeWidth=2;" vertex="1" parent="1">
+        <mxCell id="NJD7KRaixhtoixWHFcWI-16" value="从依赖树中取出这些Module并实例化(单例)" style="rounded=1;whiteSpace=wrap;html=1;absoluteArcSize=1;arcSize=14;strokeWidth=2;" parent="1" vertex="1">
           <mxGeometry x="282" y="510" width="100" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="NJD7KRaixhtoixWHFcWI-30" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="NJD7KRaixhtoixWHFcWI-17" target="NJD7KRaixhtoixWHFcWI-21">
+        <mxCell id="NJD7KRaixhtoixWHFcWI-30" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="NJD7KRaixhtoixWHFcWI-17" target="NJD7KRaixhtoixWHFcWI-21" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="NJD7KRaixhtoixWHFcWI-31" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="NJD7KRaixhtoixWHFcWI-17" target="NJD7KRaixhtoixWHFcWI-18">
+        <mxCell id="NJD7KRaixhtoixWHFcWI-31" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="NJD7KRaixhtoixWHFcWI-17" target="NJD7KRaixhtoixWHFcWI-18" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="NJD7KRaixhtoixWHFcWI-17" value="每个实例首先进行PreInitialize" style="strokeWidth=2;html=1;shape=mxgraph.flowchart.start_1;whiteSpace=wrap;" vertex="1" parent="1">
+        <mxCell id="NJD7KRaixhtoixWHFcWI-17" value="每个实例首先进行PreInitialize" style="strokeWidth=2;html=1;shape=mxgraph.flowchart.start_1;whiteSpace=wrap;" parent="1" vertex="1">
           <mxGeometry x="272" y="610" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="NJD7KRaixhtoixWHFcWI-32" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="NJD7KRaixhtoixWHFcWI-18" target="NJD7KRaixhtoixWHFcWI-20">
+        <mxCell id="NJD7KRaixhtoixWHFcWI-32" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="NJD7KRaixhtoixWHFcWI-18" target="NJD7KRaixhtoixWHFcWI-20" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="NJD7KRaixhtoixWHFcWI-18" value="注册所有切面" style="rounded=1;whiteSpace=wrap;html=1;absoluteArcSize=1;arcSize=14;strokeWidth=2;" vertex="1" parent="1">
+        <mxCell id="NJD7KRaixhtoixWHFcWI-18" value="注册所有切面" style="rounded=1;whiteSpace=wrap;html=1;absoluteArcSize=1;arcSize=14;strokeWidth=2;" parent="1" vertex="1">
           <mxGeometry x="282" y="700" width="100" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="NJD7KRaixhtoixWHFcWI-33" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="NJD7KRaixhtoixWHFcWI-20" target="NJD7KRaixhtoixWHFcWI-22">
+        <mxCell id="NJD7KRaixhtoixWHFcWI-33" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="NJD7KRaixhtoixWHFcWI-20" target="NJD7KRaixhtoixWHFcWI-22" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="NJD7KRaixhtoixWHFcWI-20" value="注册所有Component" style="rounded=1;whiteSpace=wrap;html=1;absoluteArcSize=1;arcSize=14;strokeWidth=2;" vertex="1" parent="1">
+        <mxCell id="NJD7KRaixhtoixWHFcWI-20" value="注册所有Component" style="rounded=1;whiteSpace=wrap;html=1;absoluteArcSize=1;arcSize=14;strokeWidth=2;" parent="1" vertex="1">
           <mxGeometry x="267" y="770" width="130" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="NJD7KRaixhtoixWHFcWI-21" value="将所有标记为切面特性或者Component特性的类添加到configuration配置类中" style="rounded=1;whiteSpace=wrap;html=1;absoluteArcSize=1;arcSize=14;strokeWidth=2;" vertex="1" parent="1">
+        <mxCell id="NJD7KRaixhtoixWHFcWI-21" value="将所有标记为切面特性或者Component特性的类添加到configuration配置类中" style="rounded=1;whiteSpace=wrap;html=1;absoluteArcSize=1;arcSize=14;strokeWidth=2;" parent="1" vertex="1">
           <mxGeometry x="450" y="610" width="220" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="NJD7KRaixhtoixWHFcWI-22" value="每个Module进行Initialize和PostInitialize" style="rounded=1;whiteSpace=wrap;html=1;absoluteArcSize=1;arcSize=14;strokeWidth=2;" vertex="1" parent="1">
+        <mxCell id="NJD7KRaixhtoixWHFcWI-22" value="每个Module进行Initialize和PostInitialize" style="rounded=1;whiteSpace=wrap;html=1;absoluteArcSize=1;arcSize=14;strokeWidth=2;" parent="1" vertex="1">
           <mxGeometry x="282" y="840" width="100" height="70" as="geometry" />
         </mxCell>
       </root>

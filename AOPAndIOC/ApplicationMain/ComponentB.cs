@@ -18,6 +18,7 @@ namespace ApplicationMain
     {
         public int GetNumber()
         {
+            Console.WriteLine("ComponentB GetNumber");
             return 1;
         }
     }
@@ -29,12 +30,14 @@ namespace ApplicationMain
         [AspectMethod(Classification = AspectMethodClassification.After, TargetMethod = "GetNumber")]
         public int AfterGetNumber(AspectContext context)
         {
+            Console.WriteLine("AspectB After GetNumber");
             return (int)context.LastHandleResult + 1;
         }
 
         [AspectMethod(Classification = AspectMethodClassification.Before, TargetMethod = "GetNumber")]
         public int BeforeGetNumber(AspectContext context)
         {
+            Console.WriteLine("AspectB Before GetNumber");
             context.IsContinue = true;
             return 0;
         }
