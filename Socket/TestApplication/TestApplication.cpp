@@ -3,6 +3,7 @@
 
 #include <iostream>
 #include "Person.h"
+#include "instance.cpp"
 
 int main()
 {
@@ -13,5 +14,16 @@ int main()
     std::cout << p1.GetPersonInfo();
     std::cout << '\n';
     std::cout << p2.GetPersonInfo();
+    std::cout << '\n';
+    Cat cat;
+    Fish fish;
+    cat.setAge(1);
+    cat.setName("猫");
+    fish.setAge(2);
+    fish.setName("鱼");
+
+    cat.Breathe();
+    std::cout << '\n';
+    fish.Breathe();
 }
 
