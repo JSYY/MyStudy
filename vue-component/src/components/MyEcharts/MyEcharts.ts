@@ -122,6 +122,15 @@ export default {
             });
         }
 
+        function clearBrush(){
+            //清除范围框选
+            EChart.dispatchAction({
+                type: 'brush',
+                command: 'clear',
+                areas: [],
+            });
+        }
+
         function Init(){
             EChart = echarts.init(document.getElementById("EChart"));
             EChart.setOption(config);
