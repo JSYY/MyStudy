@@ -22,7 +22,7 @@ export default {
                 }
             },
             yAxis:[ {
-                name:"计数率kcps",
+                name:"counts",
                 nameTextStyle:{
                     color:"#FFFFFF",
                     fontSize:'16'
@@ -37,7 +37,7 @@ export default {
                 }
             }],
             series: [{
-                name:'计数率kcps',
+                name:'counts',
                 data: [820, 932, 901, 934, 1290, 1330, 1320],
                 type: 'line',
                 smooth: true,
@@ -71,7 +71,29 @@ export default {
                 x2:30,
                 y2:50,
                 borderWidth:1
-            }
+            },
+            dataZoom : [
+                {
+                    type: 'slider',
+                    show: true,
+                    start: 0,
+                    end: 100,
+                },
+            ],
+            brush: {  
+                xAxisIndex: 0,
+                throttleType: "debounce", //开启选中延迟后调用回调延迟 
+                throttleDelay: 600, //选中延迟后调用回调延迟时
+                brushStyle: {                  
+                   borderWidth: 2,                    
+                   color: 'rgba(248,231,28,0.10)',                    
+                   borderColor: '#F8E71C'  
+                },
+                transformable:false  //设置是否可以拖动          
+            },
+            toolbox: {                
+                show: false, //可以设置不同的按钮           
+            },    
         };
 
         onMounted(()=>{
@@ -85,6 +107,20 @@ export default {
             EChart.dispose();
             EChart=null;
         })
+
+        //设置框选范围
+        function setBrushPosition(x1:number,x2:number){
+            EChart.dispatchAction({
+                type:'brush',
+                areas:[
+                    {
+                        xAxisIndex:0,
+                        brushType:'lineX',
+                        coordRange:[x1,x2],
+                    }
+                ],
+            });
+        }
 
         function Init(){
             EChart = echarts.init(document.getElementById("EChart"));
