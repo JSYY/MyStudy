@@ -7,8 +7,7 @@
 3.C++学习(持续)  
 4.服务端封装设计(持续)   
 5.leetcode-左程云  
-6.任务队列设计  
-7.directshow研究
+6.directshow研究
 
 ## 📦已有实践
 1.基于Unity的AOP/IOC框架/C#一些语法知识的Demo实现  
@@ -17,17 +16,21 @@
 4.Grpc实践  
 5.vue组件化  
 6.基于hammerjs的web图形绘制实践  
-7.web摄像头推流(1.ffmpeg+jsmpeg+websocket方式 2.webRTC)   
-8.webpack入门实践   
-9.socket通信  
-10.IO流实现文件夹拷贝时的进度以及速度剩余时间计算(隶属项目：AOPAndIOC)  
-11.第三方日志log4net封装集成(隶属项目：AOPAndIOC)  
-12.基于abp框架的服务端demo，集成log4net、signalr、MyUnity  
-13.web通过修改dom树弹框挂载组件Demo(隶属项目：MyServer前端)  
-14.Echarts-Demo(隶属项目vue-component)
+7.web摄像头推流(1.ffmpeg+jsmpeg+websocket方式 2.webRTC)  
+8.摄像头directshow Demo(CameraService项目)  
+9.webpack入门实践   
+10.socket通信  
+11.IO流实现文件夹拷贝时的进度以及速度剩余时间计算(隶属项目：AOPAndIOC)  
+12.第三方日志log4net封装集成(隶属项目：AOPAndIOC)  
+13.基于abp框架的服务端demo，集成log4net、signalr、MyUnity  
+14.web通过修改dom树弹框挂载组件Demo(隶属项目：MyServer前端)  
+15.Echarts-Demo(隶属项目vue-component)
 
 ---------------------------------------------------
 # ✨更新
+## 2023/12/01 更新  
+基于WebRtc的聊天室应用demo，完整走过整个端对端的交互流程，实现远程视频
+
 ## 2023/9/06 更新  
 Echarts学习
 
