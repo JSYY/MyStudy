@@ -7,7 +7,8 @@
 3.C++学习(持续)  
 4.服务端封装设计(持续)   
 5.leetcode-左程云  
-6.directshow研究
+6.directshow研究  
+7.pyqt研究
 
 ## 📦已有实践
 1.基于Unity的AOP/IOC框架/C#一些语法知识的Demo实现  
