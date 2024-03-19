@@ -5,15 +5,19 @@ VisualStudioVersion = 16.0.32228.343
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OpenClosePrinciple", "OpenClosePrinciple\OpenClosePrinciple.csproj", "{636EC819-8B4C-45EF-91CD-C741BAA69B13}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SingleResponsibilityPrinciple", "SingleResponsibilityPrinciple\SingleResponsibilityPrinciple.csproj", "{8D27D956-7E9B-4D3C-BF64-78B1D593D645}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SingleResponsibilityPrinciple", "SingleResponsibilityPrinciple\SingleResponsibilityPrinciple.csproj", "{8D27D956-7E9B-4D3C-BF64-78B1D593D645}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InterfaceSegregationPrinciple", "InterfaceSegregationPrinciple\InterfaceSegregationPrinciple.csproj", "{7A57573D-F635-465E-A616-384AA301910F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "InterfaceSegregationPrinciple", "InterfaceSegregationPrinciple\InterfaceSegregationPrinciple.csproj", "{7A57573D-F635-465E-A616-384AA301910F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DependenceInversionPrinciple", "DependenceInversionPrinciple\DependenceInversionPrinciple.csproj", "{11E36769-C579-42E8-825B-6FE018F9E2B4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DependenceInversionPrinciple", "DependenceInversionPrinciple\DependenceInversionPrinciple.csproj", "{11E36769-C579-42E8-825B-6FE018F9E2B4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LiskovSubstitutionPrinciple", "LiskovSubstitutionPrinciple\LiskovSubstitutionPrinciple.csproj", "{B33FA468-546B-4A01-A1FC-D493E0F90283}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LiskovSubstitutionPrinciple", "LiskovSubstitutionPrinciple\LiskovSubstitutionPrinciple.csproj", "{B33FA468-546B-4A01-A1FC-D493E0F90283}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LawOfDemeterPrinciple", "LawOfDemeterPrinciple\LawOfDemeterPrinciple.csproj", "{EB6EA8B8-DB3B-4FE0-AEAD-FE6304D413A6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LawOfDemeterPrinciple", "LawOfDemeterPrinciple\LawOfDemeterPrinciple.csproj", "{EB6EA8B8-DB3B-4FE0-AEAD-FE6304D413A6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CommandHandler", "CommandHandler\CommandHandler.csproj", "{964E52F4-0194-42A5-8622-D25A23E3F9FB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DesignPrinciplesUT", "DesignPrinciplesUT\DesignPrinciplesUT.csproj", "{970D03B8-5BCB-44EA-AB92-6042B5C02C29}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,6 +49,14 @@ Global
 		{EB6EA8B8-DB3B-4FE0-AEAD-FE6304D413A6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EB6EA8B8-DB3B-4FE0-AEAD-FE6304D413A6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EB6EA8B8-DB3B-4FE0-AEAD-FE6304D413A6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{964E52F4-0194-42A5-8622-D25A23E3F9FB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{964E52F4-0194-42A5-8622-D25A23E3F9FB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{964E52F4-0194-42A5-8622-D25A23E3F9FB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{964E52F4-0194-42A5-8622-D25A23E3F9FB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{970D03B8-5BCB-44EA-AB92-6042B5C02C29}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{970D03B8-5BCB-44EA-AB92-6042B5C02C29}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{970D03B8-5BCB-44EA-AB92-6042B5C02C29}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{970D03B8-5BCB-44EA-AB92-6042B5C02C29}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
