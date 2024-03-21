@@ -11,7 +11,7 @@
 
 QT_BEGIN_NAMESPACE
 namespace Ui {
-class MainWindow;
+    class MainWindow;
 }
 QT_END_NAMESPACE
 
@@ -20,28 +20,28 @@ class MainWindow : public QMainWindow
     Q_OBJECT
 
 public:
-    MainWindow(QWidget *parent = nullptr);
+    MainWindow(QWidget* parent = nullptr);
     ~MainWindow();
-    QCamera *my_camera;
-    QMediaCaptureSession *my_captureSession;
-    QImageCapture *my_imageCapture;
+    QCamera* my_camera;
+    QMediaCaptureSession* my_captureSession;
+    QImageCapture* my_imageCapture;
     QList<QCameraDevice> camera_list;
     void getAllCamera();
     bool cameraState;
     QString saveFileAddress;
 
 private slots:
-    void on_comboBox_currentIndexChanged(int index);
+    void cameraChanged(int index);
 
-    void on_open_clicked();
+    void openCamera();
 
-    void on_close_clicked();
+    void closeCamera();
 
     void on_actionSave_Address_triggered();
 
-    void on_open_2_clicked();
+    void capture();
 
 private:
-    Ui::MainWindow *ui;
+    Ui::MainWindow* ui;
 };
 #endif // MAINWINDOW_H
