@@ -8,6 +8,7 @@
 #include <QImageCapture>
 #include <QFileDialog>
 #include <QMessageBox>
+#include "pch.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui {
@@ -22,7 +23,8 @@ class MainWindow : public QMainWindow
 public:
     MainWindow(QWidget* parent = nullptr);
     ~MainWindow();
-    QCamera* my_camera;
+    int currentIndex;
+    QCamera* camera;
     QMediaCaptureSession* my_captureSession;
     QImageCapture* my_imageCapture;
     QList<QCameraDevice> camera_list;

@@ -1,4 +1,4 @@
-#include "MyQtApplicationOfCamera.h"
+ï»¿#include "MyQtApplicationOfCamera.h"
 #include "ui_MyQtApplicationOfCamera.h"
 
 MainWindow::MainWindow(QWidget* parent)
@@ -17,30 +17,31 @@ MainWindow::MainWindow(QWidget* parent)
     connect(ui->capture, &QPushButton::clicked, this, &MainWindow::capture);
 }
 
+
 MainWindow::~MainWindow()
 {
     delete ui;
 }
 
 
-//ÄÃµ½ËùÓĞÉãÏñÍ·Éè±¸²¢´æÈëµ½comboBoxÖĞ
+//æ‹¿åˆ°æ‰€æœ‰æ‘„åƒå¤´è®¾å¤‡å¹¶å­˜å…¥åˆ°comboBoxä¸­
 void MainWindow::getAllCamera() {
     camera_list = QMediaDevices::videoInputs();
     for (const QCameraDevice& camera : camera_list) {
         qDebug() << camera.description();
+        qDebug() << camera.id();
         ui->comboBox->addItem(camera.description());
     }
     my_captureSession = new QMediaCaptureSession;
     my_imageCapture = new QImageCapture;
     my_captureSession->setImageCapture(my_imageCapture);
-    my_camera = new QCamera(camera_list[0]);
+    currentIndex = 0;
 }
 
 
 void MainWindow::cameraChanged(int index)
 {
-    qDebug() << index;
-    my_camera = new QCamera(camera_list[index]);
+    currentIndex = index;
 }
 
 void MainWindow::openCamera()
@@ -48,17 +49,19 @@ void MainWindow::openCamera()
     if (cameraState) {
         closeCamera();
     }
-    my_captureSession->setCamera(my_camera);
+    camera = new QCamera(camera_list[currentIndex]);
+    my_captureSession->setCamera(camera);
     my_captureSession->setVideoOutput(ui->widget);
-    my_camera->start();
+    camera->start();
     cameraState = true;
 }
 
 
 void MainWindow::closeCamera()
 {
-    my_camera->stop();
+    camera->stop();
     cameraState = false;
+    delete camera;
 }
 
 
@@ -73,7 +76,7 @@ void MainWindow::capture()
 {
     if (!cameraState)
     {
-        QMessageBox::warning(this, "Warning", tr("Capture fail£¡Camera not open!"));
+        QMessageBox::warning(this, "Warning", tr("Capture failï¼Camera not open!"));
         return;
     }
     QDateTime dateTime(QDateTime::currentDateTime());
