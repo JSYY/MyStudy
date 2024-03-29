@@ -5,11 +5,10 @@
 1.多线程总结(持续)    
 2.electron研究(持续)        
 3.C++学习(持续)  
-4.服务端封装设计(持续)   
-5.leetcode-左程云  
-6.directshow研究  
-7.C++ Qt学习，pyqt学习  
-8.3D Slicer
+4.服务端封装设计(持续)     
+5.directshow研究  
+6.C++ Qt学习，pyqt学习  
+7.3D Slicer
 
 ## 📦已有实践
 1.基于Unity的AOP/IOC框架/C#一些语法知识的Demo实现  
@@ -26,10 +25,17 @@
 12.第三方日志log4net封装集成(隶属项目：AOPAndIOC)  
 13.基于abp框架的服务端demo，集成log4net、signalr、MyUnity  
 14.web通过修改dom树弹框挂载组件Demo(隶属项目：MyServer前端)  
-15.Echarts-Demo(隶属项目vue-component)
+15.Echarts-Demo(隶属项目vue-component)  
+16.QT版本的多摄像头获取与截屏(C++实践，MyQTApplicationOfCamera)
 
 ---------------------------------------------------
 # ✨更新
+## 2024/3/21 更新  
+基于QT的界面摄像头应用，移植到VS2019工程中，完成C++的第三方依赖引用  
+1.添加VC++ 引用目录(.h头文件)和包含目录(lib文件)  
+2.添加链接器中输入层级下的附加依赖项，这里填写具体的lib文件名字  
+3.需要将对应的dll拷到运行目录的exe同级目录下
+
 ## 2023/12/01 更新  
 基于WebRtc的聊天室应用demo，完整走过整个端对端的交互流程，实现远程视频
 
