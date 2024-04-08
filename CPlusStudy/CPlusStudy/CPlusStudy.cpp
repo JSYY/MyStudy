@@ -28,4 +28,15 @@ int main()
     cout << arrayOfPoints[0] << endl;
     cout << *(arrayOfPoints[0]) << endl;
     cout << (*PointToAnArray)[0] << endl;
+
+    //指针的指针
+    int x = 123;
+    int* y = &x;
+    int** z = &y;
+
+    cout << y << endl;//x的地址
+    cout << *y << endl;//x的值
+    cout << z << &y<< endl;//y的地址
+    cout << *z << &x<< endl;//x的地址
+    cout << **z << x<< endl;//x的值
 }
