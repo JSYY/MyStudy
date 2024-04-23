@@ -18,6 +18,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\AttributeClass\AttributeClass.csproj" />
     <ProjectReference Include="..\SerializeMethod\SerializeMethod.csproj" />
   </ItemGroup>
 
