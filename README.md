@@ -26,7 +26,8 @@
 13.基于abp框架的服务端demo，集成log4net、signalr、MyUnity  
 14.web通过修改dom树弹框挂载组件Demo(隶属项目：MyServer前端)  
 15.Echarts-Demo(隶属项目vue-component)  
-16.QT版本的多摄像头获取与截屏(C++实践，MyQTApplicationOfCamera)
+16.QT版本的多摄像头获取与截屏(C++实践，MyQTApplicationOfCamera)  
+17.C#的二进制序列化与Xml序列化
 
 ---------------------------------------------------
 # ✨更新
