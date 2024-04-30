@@ -15,22 +15,25 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="TestApplication.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="Person.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="instance.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
+    <ClInclude Include="framework.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="pch.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="socket.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Person.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="Animal.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
+    <ClCompile Include="dllmain.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="pch.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="socket.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

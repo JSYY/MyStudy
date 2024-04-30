@@ -21,15 +21,15 @@
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{414144cd-31fb-4d25-8241-fab717ab7970}</ProjectGuid>
-    <RootNamespace>TestApplication</RootNamespace>
+    <ProjectGuid>{b518fca7-4891-4da4-9b38-baa5f0f9ff50}</ProjectGuid>
+    <RootNamespace>SocketClientEx</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v143</PlatformToolset>
+    <PlatformToolset>v142</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
@@ -139,13 +139,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="instance.cpp" />
-    <ClCompile Include="Person.cpp" />
-    <ClCompile Include="TestApplication.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="Animal.h" />
-    <ClInclude Include="Person.h" />
+    <ClCompile Include="SocketClientEx.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
