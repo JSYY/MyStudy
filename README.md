@@ -20,7 +20,7 @@
 7.web摄像头推流(1.ffmpeg+jsmpeg+websocket方式 2.webRTC)  
 8.摄像头directshow Demo(CameraService项目)  
 9.webpack入门实践   
-10.socket通信  
+10.socket通信：C++版本和C#版本    
 11.IO流实现文件夹拷贝时的进度以及速度剩余时间计算(隶属项目：AOPAndIOC)  
 12.第三方日志log4net封装集成(隶属项目：AOPAndIOC)  
 13.基于abp框架的服务端demo，集成log4net、signalr、MyUnity  
