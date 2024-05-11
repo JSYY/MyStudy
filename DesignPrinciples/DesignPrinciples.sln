@@ -15,11 +15,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LiskovSubstitutionPrinciple
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LawOfDemeterPrinciple", "LawOfDemeterPrinciple\LawOfDemeterPrinciple.csproj", "{EB6EA8B8-DB3B-4FE0-AEAD-FE6304D413A6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CommandHandler", "CommandHandler\CommandHandler.csproj", "{964E52F4-0194-42A5-8622-D25A23E3F9FB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CommandHandler", "CommandHandler\CommandHandler.csproj", "{964E52F4-0194-42A5-8622-D25A23E3F9FB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DesignPrinciplesUT", "DesignPrinciplesUT\DesignPrinciplesUT.csproj", "{970D03B8-5BCB-44EA-AB92-6042B5C02C29}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AbstractAndInterface", "AbstractAndInterface\AbstractAndInterface.csproj", "{DD4990F7-A3BB-4263-B05E-67E389757188}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AbstractAndInterface", "AbstractAndInterface\AbstractAndInterface.csproj", "{DD4990F7-A3BB-4263-B05E-67E389757188}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DecoratorPrinciple", "DecoratorPrinciple\DecoratorPrinciple.csproj", "{D0DF8A80-44AE-4714-B163-DACD1CDA9584}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NUnit_DesignPrincipleUT", "NUnit_DesignPrincipleUT\NUnit_DesignPrincipleUT.csproj", "{5B926470-E40B-404E-9144-4C1E88953CB2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -55,14 +57,18 @@ Global
 		{964E52F4-0194-42A5-8622-D25A23E3F9FB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{964E52F4-0194-42A5-8622-D25A23E3F9FB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{964E52F4-0194-42A5-8622-D25A23E3F9FB}.Release|Any CPU.Build.0 = Release|Any CPU
-		{970D03B8-5BCB-44EA-AB92-6042B5C02C29}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{970D03B8-5BCB-44EA-AB92-6042B5C02C29}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{970D03B8-5BCB-44EA-AB92-6042B5C02C29}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{970D03B8-5BCB-44EA-AB92-6042B5C02C29}.Release|Any CPU.Build.0 = Release|Any CPU
 		{DD4990F7-A3BB-4263-B05E-67E389757188}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{DD4990F7-A3BB-4263-B05E-67E389757188}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DD4990F7-A3BB-4263-B05E-67E389757188}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DD4990F7-A3BB-4263-B05E-67E389757188}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D0DF8A80-44AE-4714-B163-DACD1CDA9584}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D0DF8A80-44AE-4714-B163-DACD1CDA9584}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D0DF8A80-44AE-4714-B163-DACD1CDA9584}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D0DF8A80-44AE-4714-B163-DACD1CDA9584}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5B926470-E40B-404E-9144-4C1E88953CB2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5B926470-E40B-404E-9144-4C1E88953CB2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5B926470-E40B-404E-9144-4C1E88953CB2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5B926470-E40B-404E-9144-4C1E88953CB2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

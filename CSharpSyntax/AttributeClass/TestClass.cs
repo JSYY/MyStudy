@@ -2,15 +2,16 @@
 
 namespace AttributeClass
 {
-    [MyAttribute(Name ="TestClass")]
+    [My(Name ="TestClass")]
     public class TestClass
     {
         private int id;
         public string name;
 
+        [Property]
         public int ID { get; set; }
 
-        [MethodAttribute(Name ="Method")]
+        [Method(Name ="Method")]
         public void Method()
         {
 

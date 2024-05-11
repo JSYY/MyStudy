@@ -18,4 +18,10 @@ namespace AttributeClass
     {
         public string Name { get; set; }
     }
+
+    [AttributeUsage(AttributeTargets.Property, Inherited = false)]
+    public class PropertyAttribute : Attribute
+    {
+      
+    }
 }

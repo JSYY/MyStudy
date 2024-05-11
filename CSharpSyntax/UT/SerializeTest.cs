@@ -28,6 +28,8 @@ namespace SerializeTest
             };
             var n = xmlSerializeHelper.Serialize<ClassA>(classA);
             var result = xmlSerializeHelper.DeSerializeString<ClassA>(n);
+
+
             Assert.AreEqual(result.name, classA.name);
         }
 
