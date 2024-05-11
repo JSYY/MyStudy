@@ -28,7 +28,8 @@
 15.Echarts-Demo(隶属项目vue-component)  
 16.QT版本的多摄像头获取与截屏(C++实践，MyQTApplicationOfCamera)  
 17.C#的二进制序列化与Xml序列化  
-18.C#反射、特性
+18.C#反射、特性  
+19.UT框架的实践，C#(NUnit、MSTest)，C++(GoogleTest)
 
 ---------------------------------------------------
 # ✨更新
