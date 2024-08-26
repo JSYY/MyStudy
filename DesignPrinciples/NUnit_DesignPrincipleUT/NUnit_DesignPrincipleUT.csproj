@@ -16,6 +16,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\AbstractFactory\AbstractFactory.csproj" />
+    <ProjectReference Include="..\BridgePattern\BridgePattern.csproj" />
     <ProjectReference Include="..\CommandHandler\CommandHandler.csproj" />
     <ProjectReference Include="..\DecoratorPrinciple\DecoratorPrinciple.csproj" />
   </ItemGroup>

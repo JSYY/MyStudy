@@ -1,4 +1,5 @@
 using AbstractFactory.Factory;
+using BridgePattern;
 using CommandHandler;
 using DecoratorPrinciple;
 using NUnit.Framework;
@@ -47,6 +48,28 @@ namespace NUnit_DesignPrincipleUT
             Assert.AreEqual(size1, service1.CreateProduct().Size);
             var service2 = factory.CreateProductService(AbstractFactory.ProductType.computer, size2);
             Assert.AreEqual(size2, service2.CreateProduct().Size);
+        }
+
+        [Test]
+        public void TestBridgePattern()
+        {
+            string blue = "Blue";
+            string red = "Red";
+            string circle = "Circle";
+            string rectangle = "Rectangle";
+
+            var redPainter = new RedPainter();
+            var bluePainter = new BluePainter();
+
+            var circleObj = new Circle(bluePainter);
+            circleObj.Draw();
+            Assert.AreEqual(blue, circleObj.Color);
+            Assert.AreEqual(circle, circleObj.Type);
+
+            var rectangleObject = new Rectangle(redPainter);
+            rectangleObject.Draw();
+            Assert.AreEqual(red, rectangleObject.Color);
+            Assert.AreEqual(rectangle, rectangleObject.Type);
         }
     }
 }
