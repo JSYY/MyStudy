@@ -16,7 +16,17 @@ namespace DecoratorPrinciple
             DecoratorObject = decorator;
         }
 
-        public abstract void Handle();
+        public virtual void Handle()
+        {
+            Console.WriteLine("的对象{0}",new object[] { DecoratorObject });
+        }
 
+    }
+
+    public class DecoratorObject
+    {
+        public string PropertyA { get; set; }
+        public string PropertyB { get; set; }
+        public string PropertyC { get; set; }
     }
 }

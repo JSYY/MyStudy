@@ -15,10 +15,15 @@ namespace DecoratorPrinciple
 
         public override void Handle()
         {
-            Console.WriteLine("ComponentCDecorator start handle");
+            var de = DecoratorObject as DecoratorObject;
+            de.PropertyC = "C";
             if (Handler != null)
             {
                 Handler.Handle();
+            }
+            else
+            {
+                base.Handle();
             }
         }
     }

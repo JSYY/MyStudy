@@ -15,6 +15,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\AbstractFactory\AbstractFactory.csproj" />
     <ProjectReference Include="..\CommandHandler\CommandHandler.csproj" />
     <ProjectReference Include="..\DecoratorPrinciple\DecoratorPrinciple.csproj" />
   </ItemGroup>

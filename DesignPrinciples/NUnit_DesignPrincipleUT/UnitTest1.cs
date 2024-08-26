@@ -1,3 +1,4 @@
+using AbstractFactory.Factory;
 using CommandHandler;
 using DecoratorPrinciple;
 using NUnit.Framework;
@@ -24,10 +25,28 @@ namespace NUnit_DesignPrincipleUT
         [Test]
         public void TestDecorator()
         {
-            ComponentADecorator A = new ComponentADecorator(null, null);
-            ComponentBDecorator B = new ComponentBDecorator(A, null);
-            ComponentCDecorator C = new ComponentCDecorator(B, null);
+            DecoratorObject obj = new DecoratorObject();
+            ComponentADecorator A = new ComponentADecorator(null, obj);
+            ComponentBDecorator B = new ComponentBDecorator(A, obj);
+            ComponentCDecorator C = new ComponentCDecorator(B, obj);
             C.Handle();
+
+            Assert.AreEqual(obj.PropertyA, "A");
+            Assert.AreEqual(obj.PropertyB, "B");
+            Assert.AreEqual(obj.PropertyC, "C");
+        }
+
+        [Test]
+        public void TestAbstractFactory()
+        {
+            string size1 = "60";
+            string size2 = "70";
+
+            HuaweiFactory factory = new HuaweiFactory();
+            var service1 = factory.CreateProductService(AbstractFactory.ProductType.mobilePhone, size1);
+            Assert.AreEqual(size1, service1.CreateProduct().Size);
+            var service2 = factory.CreateProductService(AbstractFactory.ProductType.computer, size2);
+            Assert.AreEqual(size2, service2.CreateProduct().Size);
         }
     }
 }
