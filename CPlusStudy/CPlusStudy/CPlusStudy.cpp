@@ -1,5 +1,7 @@
 ﻿#include <iostream>
 using namespace std;
+#include "MathLib.h"
+#include <MathDll.h>
 
 int main()
 {
@@ -39,4 +41,10 @@ int main()
     cout << z << &y<< endl;//y的地址
     cout << *z << &x<< endl;//x的地址
     cout << **z << x<< endl;//x的值
+
+    cout << MathLib::Arithmetic::Add(1, 2) << endl;
+    cout << add(10,12) << endl;
+    Circle myCircle(20);
+    cout << myCircle.getArea() << endl;
+    cout << myCircle.getRadius() << endl;
 }

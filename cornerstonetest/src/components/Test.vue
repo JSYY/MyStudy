@@ -1,38 +1,31 @@
 <template>
-    <div class="test">
-      <div>{{msg}}</div>
-      <button @click="click">qweqweq</button>
-    </div>
-  </template>
-  
-  <script lang="ts">
-import { ref, watch,h,render, onMounted, createVNode, getCurrentInstance, VNodeTypes } from 'vue'; 
-  export default{
-    name: 'Test',
-    props: {
-      msg: String,
-      index:Number
-    },
-    setup(props:any){
-        let ins = getCurrentInstance();
+  <div class="button-group">
+    <input v-model="filePath" />
+    <button @click="load(0)">loadByWADOUri</button>
+    <button @click="load(1)">loadByHttpRequest</button>
+    <button @click="dispose">Dispose</button>
+  </div>
 
+  <div id="dicomImage"></div>
+</template>
 
-        function click(){
-            let divs = document.querySelectorAll('.test');
-            let div = divs[props.index as number]
-            let vnode = createVNode(ins?.type as VNodeTypes,{msg:Math.random(),index:props.index+1});
-            render(vnode,div as HTMLDivElement);
-        }
-  
-      return{
-        click
-      }
-    }
-  }
-  </script>
-  
-  <!-- Add "scoped" attribute to limit CSS to this component only -->
-  <style scoped lang="scss">
-  
-  </style>
-  
+<script lang="ts" src="./Test.ts">
+
+</script>
+
+<!-- Add "scoped" attribute to limit CSS to this component only -->
+<style scoped lang="scss">
+#dicomImage{
+  width: 600px;
+  height: 800px;
+}
+
+.button-group{
+  display: flex;
+  flex-direction: row;
+}
+
+button{
+  margin-left: 10px;
+}
+</style>

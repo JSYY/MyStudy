@@ -1,16 +1,18 @@
 {
   "compilerOptions": {
-    "target": "esnext",
-    "module": "esnext",
-    "strict": true,
+    "target": "es6",
+    "module": "es6",
+    "strict": false,
     "jsx": "preserve",
+    "importHelpers": true,
     "moduleResolution": "node",
+    "experimentalDecorators": true,
     "skipLibCheck": true,
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
-    "forceConsistentCasingInFileNames": true,
-    "useDefineForClassFields": true,
     "sourceMap": true,
+    "noImplicitAny": false,
+    "resolveJsonModule": true,
     "baseUrl": ".",
     "types": [
       "webpack-env"
@@ -32,8 +34,7 @@
     "src/**/*.tsx",
     "src/**/*.vue",
     "tests/**/*.ts",
-    "tests/**/*.tsx"
-  ],
+    "tests/**/*.tsx" ],
   "exclude": [
     "node_modules"
   ]
