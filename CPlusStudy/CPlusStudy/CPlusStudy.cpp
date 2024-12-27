@@ -7,7 +7,6 @@ using namespace std;
 #include <thread> 
 #include <mutex>
 #include <sstream>
-#include "MediaPlayer.h"
 
 void TestClass() {
     double radius = 2.5;

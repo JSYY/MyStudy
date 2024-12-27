@@ -1,175 +1,317 @@
 #include "capture.h"
 
-CCapture::CCapture()
+Capture::Capture()
 {
+    hr = NULL;
+    pGraph = NULL;
+    pCaptureFilter = NULL;
+    pSampleGrabber = NULL;
+    pSampleGrabberFilter = NULL;
+    pMediaControl = NULL;
+    pGrabberCB = NULL;
 
+    pEnum = NULL;
+    pDevEnum = NULL;
+    pMoniker = NULL;
 }
 
-CCapture::~CCapture()
+void Capture::InitDevice()
 {
-
+    CreateGraphBuilder();
+    BindingDevice();
+    AddSampleGrabber();
+    Connect();
+    SetGrabberCallback();
 }
 
-// 初始化
-HRESULT CCapture::Init(HWND hwnd)
+void Capture::CreateGraphBuilder()
 {
-	HRESULT hr;
-
-	// 创建filter graph
-	hr = CoCreateInstance(CLSID_FilterGraph, NULL, CLSCTX_INPROC, IID_IGraphBuilder, (void**)&m_pGraph);
-	if (FAILED(hr))
-		return hr;
-
-	// 创建capture granph
-	hr = CoCreateInstance(CLSID_CaptureGraphBuilder2, NULL, CLSCTX_INPROC, IID_ICaptureGraphBuilder2, (void**)&m_pCapture);
-	if (FAILED(hr))
-		return hr;
-
-	// 查询graph中各IID参数标识的接口指针
-	hr = m_pGraph->QueryInterface(IID_IMediaControl, (LPVOID*)&m_pMediaC);
-	if (FAILED(hr))
-		return hr;
-	hr = m_pGraph->QueryInterface(IID_IMediaEventEx, (LPVOID*)&m_pMediaE);
-	if (FAILED(hr))
-		return hr;
-	hr = m_pGraph->QueryInterface(IID_IVideoWindow, (LPVOID*)&m_pVideoW);
-	if (FAILED(hr))
-		return hr;
-
-	// 为capture graph指定要使用的filter graph
-	hr = m_pCapture->SetFiltergraph(m_pGraph);
-	if (FAILED(hr))
-		return hr;
-
-	// 获得窗口句柄
-	m_hwnd = hwnd;
-
-	return hr;
+    // 初始化COM库
+    hr = CoInitialize(NULL);
+    if (FAILED(hr))
+    {
+        std::cerr << "COM 初始化失败，错误代码: " << std::hex << hr << std::endl;
+    }
+    // 创建GraphBuilder对象
+    hr = CoCreateInstance(CLSID_FilterGraph, NULL, CLSCTX_INPROC_SERVER, IID_IGraphBuilder, (void**)&pGraph);
+    if (FAILED(hr))
+    {
+        std::cerr << "创建GraphBuilder对象失败" << std::endl;
+        CoUninitialize();
+    }
 }
 
-// 寻找视频采集设备
-HRESULT CCapture::FindCaptureDevice()
+void Capture::BindingDevice()
 {
-	HRESULT hr = S_OK;
-	ICreateDevEnum* pDevEnum = NULL;
-	IEnumMoniker* pClassEnum = NULL; // 用于视频采集设备的枚举
-	IMoniker* pMoniker = NULL; // 设备Moniker号
+    // 创建设备枚举器
+    hr = CoCreateInstance(CLSID_SystemDeviceEnum, NULL, CLSCTX_INPROC_SERVER, IID_ICreateDevEnum, (void**)&pDevEnum);
+    if (FAILED(hr))
+    {
+        std::cerr << "创建设备枚举器失败" << std::endl;
+    }
 
-	// 创建系统设备枚举
-	hr = CoCreateInstance(CLSID_SystemDeviceEnum, NULL, CLSCTX_INPROC, IID_ICreateDevEnum, (void**)&pDevEnum);
-	if (FAILED(hr))
-		return hr;
+    // 创建视频设备类别枚举器
+    hr = pDevEnum->CreateClassEnumerator(CLSID_VideoInputDeviceCategory, &pEnum, 0);
+    if (FAILED(hr))
+    {
+        std::cerr << "创建视频设备类别枚举器失败" << std::endl;
+        pDevEnum->Release();
+    }
 
-	// 创建一个指定视频采集设备的枚举
-	hr = pDevEnum->CreateClassEnumerator(CLSID_VideoInputDeviceCategory, &pClassEnum, 0);
-	if (FAILED(hr) || pClassEnum == NULL)
-	{
-		SAFE_RELEASE(pDevEnum);
-		return hr;
-	}
+    // 获取第一个视频设备（摄像头）的Moniker
+    ULONG cFetched;
+    hr = pEnum->Next(1, &pMoniker, &cFetched);
+    if (FAILED(hr))
+    {
+        std::cerr << "未找到摄像头设备" << std::endl;
+        pEnum->Release();
+        pDevEnum->Release();
+    }
 
-	// 使用第一个找到的视频采集设备（只适用于单摄像头的情况）
-	hr = pClassEnum->Next(1, &pMoniker, NULL);
-	if (hr == S_FALSE)
-	{
-		SAFE_RELEASE(pDevEnum);
-		SAFE_RELEASE(pClassEnum);
-		return hr;
-	}
-	// 绑定找到摄像头的moniker到filter graph
-	hr = pMoniker->BindToObject(0, 0, IID_IBaseFilter, (void**)&m_pFilter);
-	if (FAILED(hr))
-	{
-		SAFE_RELEASE(pDevEnum);
-		SAFE_RELEASE(pClassEnum);
-		SAFE_RELEASE(pMoniker);
-		return hr;
-	}
+    // 通过Moniker绑定到视频捕获设备过滤器
+    hr = pMoniker->BindToObject(NULL, NULL, IID_IBaseFilter, (void**)&pCaptureFilter);
+    pMoniker->Release();
+    if (FAILED(hr))
+    {
+        std::cerr << "绑定到视频捕获设备过滤器失败" << std::endl;
+        pEnum->Release();
+        pDevEnum->Release();
+    }
 
-	// 增加filter graph的引用计数
-	m_pFilter->AddRef();
-
-	return hr;
+    // 将视频捕获设备过滤器添加到GraphBuilder
+    hr = pGraph->AddFilter(pCaptureFilter, L"Video Capture");
+    if (FAILED(hr))
+    {
+        std::cerr << "添加视频捕获设备过滤器到GraphBuilder失败" << std::endl;
+        pCaptureFilter->Release();
+        pEnum->Release();
+        pDevEnum->Release();
+        pGraph->Release();
+        CoUninitialize();
+    }
 }
 
-// 将base filter添加到filter graph中
-HRESULT CCapture::AddToGraph()
+void Capture::AddSampleGrabber()
 {
-	HRESULT hr = m_pGraph->AddFilter(m_pFilter, L"Video capture");
-	if (FAILED(hr))
-	{
-		m_pFilter->Release();
-		return hr;
-	}
+    // 创建并添加Sample Grabber过滤器到GraphBuilder
+    hr = CoCreateInstance(CLSID_SampleGrabber, NULL, CLSCTX_INPROC_SERVER, IID_IBaseFilter, (void**)&pSampleGrabberFilter);
+    if (FAILED(hr))
+    {
+        std::cerr << "创建Sample Grabber过滤器失败" << std::endl;
+        pCaptureFilter->Release();
+        pEnum->Release();
+        pDevEnum->Release();
+        pGraph->Release();
+        CoUninitialize();
+    }
 
-	return hr;
+    hr = pSampleGrabberFilter->QueryInterface(IID_ISampleGrabber, (void**)&pSampleGrabber);
+    if (FAILED(hr))
+    {
+        std::cerr << "获取ISampleGrabber接口失败" << std::endl;
+        pSampleGrabberFilter->Release();
+        pCaptureFilter->Release();
+        pEnum->Release();
+        pDevEnum->Release();
+        pGraph->Release();
+        CoUninitialize();
+    }
+
+    // 设置Sample Grabber的媒体类型，这里设置为RGB24格式视频数据
+    AM_MEDIA_TYPE mt;
+    ZeroMemory(&mt, sizeof(AM_MEDIA_TYPE));
+    //mt.majortype = MEDIA_TYPE_Video;
+    //mt.subtype = MEDIA_SUBTYPE_RGB24;
+    hr = pSampleGrabber->SetMediaType(&mt);
+    if (FAILED(hr))
+    {
+        std::cerr << "设置Sample Grabber媒体类型失败" << std::endl;
+        pSampleGrabber->Release();
+        pSampleGrabberFilter->Release();
+        pCaptureFilter->Release();
+        pEnum->Release();
+        pDevEnum->Release();
+        pGraph->Release();
+        CoUninitialize();
+    }
+
+    hr = pGraph->AddFilter(pSampleGrabberFilter, L"Sample Grabber");
+    if (FAILED(hr))
+    {
+        std::cerr << "添加Sample Grabber过滤器到GraphBuilder失败" << std::endl;
+        pSampleGrabber->Release();
+        pSampleGrabberFilter->Release();
+        pCaptureFilter->Release();
+        pEnum->Release();
+        pDevEnum->Release();
+        pGraph->Release();
+        CoUninitialize();
+    }
 }
 
-// 渲染并预览视频
-HRESULT CCapture::Render()
+void Capture::Connect()
 {
-	HRESULT hr;
+    // 查找视频捕获过滤器（pCaptureFilter）的输出引脚
+    IEnumPins* pEnumPins = NULL;
+    hr = pCaptureFilter->EnumPins(&pEnumPins);
+    if (FAILED(hr))
+    {
+        std::cerr << "无法枚举视频捕获过滤器的引脚" << std::endl;
+    }
 
-	// 用ICaptureGraphBuilder2接口构建预览的filter链路
-	hr = m_pCapture->RenderStream(&PIN_CATEGORY_PREVIEW, &MEDIATYPE_Video, m_pFilter, NULL, NULL);
-	if (FAILED(hr))
-	{
-		m_pFilter->Release();
-		return hr;
-	}
-	// 同时构建一个写文件的filter链路
-	IBaseFilter* pMux;
-	hr = m_pCapture->SetOutputFileName(&MEDIASUBTYPE_Avi, L"D:\\example.avi", &pMux, NULL); // 设置输出视频文件位置
-	hr = m_pCapture->RenderStream(&PIN_CATEGORY_CAPTURE, &MEDIATYPE_Video, m_pFilter, NULL, pMux); // 将m_pFilter的输出pin连接到pMux
+    IPin* pOutPin = NULL;
+    ULONG ulFetched;
+    while (pEnumPins->Next(1, &pOutPin, &ulFetched) == S_OK)
+    {
+        PIN_DIRECTION pinDir;
+        pOutPin->QueryDirection(&pinDir);
+        if (pinDir == PINDIR_OUTPUT)
+        {
+            break;
+        }
+        pOutPin->Release();
+        pOutPin = NULL;
+    }
+    pEnumPins->Release();
+    if (pOutPin == NULL)
+    {
+        std::cerr << "未找到视频捕获过滤器的输出引脚" << std::endl;
+    }
 
-	// 使用完就可以释放base filter了
-	pMux->Release();
-	m_pFilter->Release();
+    // 查找Sample Grabber过滤器（pSampleGrabberFilter）的输入引脚
+    pEnumPins = NULL;
+    hr = pSampleGrabberFilter->EnumPins(&pEnumPins);
+    if (FAILED(hr))
+    {
+        std::cerr << "无法枚举Sample Grabber过滤器的引脚" << std::endl;
+        pOutPin->Release();
+    }
 
-	// 显示窗口 , 预览采集图形
-	hr = m_pVideoW->put_Owner((OAHWND)m_hwnd);
-	if (FAILED(hr))
-		return hr;
-	hr = m_pVideoW->put_WindowStyle(WS_CHILD | WS_CLIPCHILDREN);
-	if (FAILED(hr))
-		return hr;
-	ResizeWindow(); // 重设窗口
-	hr = m_pVideoW->put_Visible(OATRUE);
-	if (FAILED(hr))
-		return hr;
-	hr = m_pMediaC->Run();
+    IPin* pInPin = NULL;
+    while (pEnumPins->Next(1, &pInPin, &ulFetched) == S_OK)
+    {
+        PIN_DIRECTION pinDir;
+        pInPin->QueryDirection(&pinDir);
+        if (pinDir == PINDIR_INPUT)
+        {
+            break;
+        }
+        pInPin->Release();
+        pInPin = NULL;
+    }
+    pEnumPins->Release();
+    if (pInPin == NULL)
+    {
+        std::cerr << "未找到Sample Grabber过滤器的输入引脚" << std::endl;
+        pOutPin->Release();
+    }
 
-	return hr;
+    // 使用找到的输入和输出引脚进行连接
+    hr = pGraph->Connect(pOutPin, pInPin);
+    if (FAILED(hr))
+    {
+        std::cerr << "连接视频捕获设备过滤器和Sample Grabber过滤器失败，错误码: " << hr << std::endl;
+        pInPin->Release();
+        pOutPin->Release();
+        // 释放相关资源，如之前添加的过滤器、GraphBuilder等，代码省略
+        CoUninitialize();
+    }
+
+    // 连接成功后，释放引脚指针
+    pInPin->Release();
+    pOutPin->Release();
 }
 
-// 销毁先前创建的filter
-void CCapture::DestroyGraph()
+void Capture::SetGrabberCallback()
 {
-	if (m_pMediaC)
-		m_pMediaC->StopWhenReady();
-
-	if (m_pVideoW)
-	{
-		m_pVideoW->put_Visible(OAFALSE);
-		m_pVideoW->put_Owner(NULL);
-	}
-
-	// 确保接口都安全释放了
-	SAFE_RELEASE(m_pMediaC);
-	SAFE_RELEASE(m_pMediaE);
-	SAFE_RELEASE(m_pVideoW);
-	SAFE_RELEASE(m_pGraph);
-	SAFE_RELEASE(m_pCapture);
+    // 创建回调实例，并设置Sample Grabber的回调
+    pGrabberCB = new MyGrabberCB();
+    hr = pSampleGrabber->SetCallback(pGrabberCB, 1);  // 0表示使用SampleCB回调
+    if (FAILED(hr))
+    {
+        std::cerr << "设置Sample Grabber回调失败" << std::endl;
+        delete pGrabberCB;
+        pSampleGrabber->Release();
+        pSampleGrabberFilter->Release();
+        pCaptureFilter->Release();
+        pEnum->Release();
+        pDevEnum->Release();
+        pGraph->Release();
+        CoUninitialize();
+    }
 }
 
-// 重设窗口
-void CCapture::ResizeWindow()
+void Capture::Run()
 {
-	RECT rc;
+    // 获取媒体控制接口并运行过滤器图
+    hr = pGraph->QueryInterface(IID_IMediaControl, (void**)&pMediaControl);
+    if (FAILED(hr))
+    {
+        std::cerr << "获取媒体控制接口失败" << std::endl;
+        delete pGrabberCB;
+        pSampleGrabber->Release();
+        pSampleGrabberFilter->Release();
+        pCaptureFilter->Release();
+        pEnum->Release();
+        pDevEnum->Release();
+        pGraph->Release();
+        CoUninitialize();
+    }
 
-	if (m_pVideoW)
-	{
-		GetClientRect(m_hwnd, &rc);
-		m_pVideoW->SetWindowPosition(0, 0, rc.right, rc.bottom);
-	}
+    hr = pMediaControl->Run();
+    if (FAILED(hr))
+    {
+        std::cerr << "运行过滤器图失败" << std::endl;
+        pMediaControl->Release();
+        delete pGrabberCB;
+        pSampleGrabber->Release();
+        pSampleGrabberFilter->Release();
+        pCaptureFilter->Release();
+        pEnum->Release();
+        pDevEnum->Release();
+        pGraph->Release();
+        CoUninitialize();
+    }
+}
+
+void Capture::Stop()
+{
+    // 停止过滤器图运行
+    hr = pMediaControl->Stop();
+    pMediaControl->Release();
+
+    // 释放相关资源
+    delete pGrabberCB;
+    pSampleGrabber->Release();
+    //pSampleGrabberFilter->Release();
+    //pCaptureFilter->Release();
+    pEnum->Release();
+    pDevEnum->Release();
+    // 移除过滤器
+    if (pSampleGrabberFilter) {
+        pGraph->RemoveFilter(pSampleGrabberFilter);
+        //pSampleGrabberFilter->Release();
+    }
+    if (pCaptureFilter) {
+        pGraph->RemoveFilter(pCaptureFilter);
+        //pCaptureFilter->Release();
+    }
+    // 释放 IGraphBuilder 接口
+    if (pGraph) {
+        pGraph->Release();
+    }
+    CoUninitialize();
+}
+
+extern "C" __declspec(dllexport) Capture * CreateMyClass() {
+    return new Capture();
+}
+
+extern "C" __declspec(dllexport) void Start(Capture* cap) {
+    cap->InitDevice();
+    cap->Run();
+}
+
+extern "C" __declspec(dllexport) void Stop(Capture * cap) {
+    cap->Stop();
 }
