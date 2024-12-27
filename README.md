@@ -18,7 +18,7 @@
 5.vue组件化  
 6.基于hammerjs的web图形绘制实践  
 7.web摄像头推流(1.ffmpeg+jsmpeg+websocket方式 2.webRTC)  
-8.摄像头directshow Demo(CameraService项目)  
+8.摄像头directshow Demo(CameraService项目)    
 9.webpack入门实践   
 10.socket通信：C++版本和C#版本    
 11.IO流实现文件夹拷贝时的进度以及速度剩余时间计算(隶属项目：AOPAndIOC)  
@@ -33,6 +33,8 @@
 
 ---------------------------------------------------
 # ✨更新
+## 2024/12/27 更新  
+更新CameraService工程，完成对directshow的调用抓取摄像头的每一帧数据，封装成动态链接库在C#和C++应用中都能完成调用  
 ## 2024/11/12 更新  
 添加C++ 动态库 静态库引用的方法实例  
 Cornerstone的实践，包括中间的server搭建
@@ -43,7 +45,7 @@ Cornerstone的实践，包括中间的server搭建
 3.需要将对应的dll拷到运行目录的exe同级目录下
 
 ## 2023/12/01 更新  
-基于WebRtc的聊天室应用demo，完整走过整个端对端的交互流程，实现远程视频
+基于WebRtc的聊天室应用demo，完整走过整个端对端的交互流程，实现局域网内远程视频
 
 ## 2023/9/06 更新  
 Echarts学习
